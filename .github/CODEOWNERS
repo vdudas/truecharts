@@ -1,8 +1,0 @@
-# Default code owners
-*                       @truecharts/core-team @privatepuffin @alfi0812 @kqmaverick @Heavybullets8 @bakayukii
-/charts/dev/            @privatepuffin
-/charts/unstable/       @privatepuffin
-/.github/CODEOWNERS     @privatepuffin @stavros-k
-/.github/scripts/       @privatepuffin @stavros-k
-/.github/workflows/     @privatepuffin @stavros-k
-/.github/renovate.json5 @privatepuffin @stavros-k
