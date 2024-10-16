@@ -1,6 +1,6 @@
 image:
   repository: joplin/server
-  tag: 2.13.5-beta@sha256:4d496d1a091b76d1546422120d4be9f16eba1c32b154bacd201da3feb2ed2a69
+  tag: 3.0.1-beta@sha256:52af57880c0e04a179107807e13ffb8868b31ea2cc86a2b04da42220facb7589
   pullPolicy: IfNotPresent
 securityContext:
   container:
@@ -45,7 +45,7 @@ workload:
             MAILER_ENABLED: 0
             MAILER_HOST: ""
             MAILER_PORT: 465
-            MAILER_SECURE: true
+            MAILER_SECURITY: tls
             MAILER_AUTH_USER: ""
             MAILER_AUTH_PASSWORD: ""
             MAILER_NOREPLY_NAME: ""

@@ -1,6 +1,6 @@
 image:
   repository: adguard/adguardhome
-  tag: v0.107.43@sha256:4016a420451810959f782d3cbe04c620d83c3431cbb13ae27aabd2921db482a0
+  tag: v0.107.53@sha256:d9c512051141e6a617d773f16cdf6782c178464c6e766acf9fe63482a171f95c
   pullPolicy: IfNotPresent
 securityContext:
   container:
@@ -106,6 +106,12 @@ service:
         protocol: udp
         port: 8853
         targetPort: 8853
+ingress:
+  main:
+    integrations:
+      homepage:
+        widget:
+          type: adguard
 persistence:
   config:
     enabled: true

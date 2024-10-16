@@ -1,62 +1,58 @@
 image:
   repository: itzg/minecraft-server
-  tag: 2023.11.1@sha256:cb98ad8c143ab0cf83351ec6a9fd76256152f7b310988f9aa1acfaaf4aacbc77
+  tag: 2024.10.1@sha256:85a2c2df862c593fbe24d6078e5074612f694a9a3bfa3d5624a01b69387be0da
   pullPolicy: Always
 j21Image:
   repository: itzg/minecraft-server
-  tag: 2023.11.1-java21@sha256:312de713187f40206d2433f6c76c4f1f5efe993dcf7c0f842b8a7e0274bd5edd
+  tag: 2024.10.1-java21@sha256:85a2c2df862c593fbe24d6078e5074612f694a9a3bfa3d5624a01b69387be0da
   pullPolicy: Always
 j21graalvmImage:
   repository: itzg/minecraft-server
-  tag: 2023.11.1-java21-graalvm@sha256:49d25c5aa26dd67326f4626ae015dcf5033ed6e9178587dce915a04b16de6ac0
+  tag: 2024.10.1-java21-graalvm@sha256:734c2b760e1499a8f390ee695419a542050325254a073de6c6de81325cfdcf39
   pullPolicy: Always
 j21alpineImage:
   repository: itzg/minecraft-server
-  tag: 2023.11.1-java21-alpine@sha256:18c2c81eff7ce4a630b676f99223fcb8aa20c525f3b8ae1cd6fbf612d5d39cf0
+  tag: 2024.10.1-java21-alpine@sha256:ad1d082be9465fc411a84453402fdb05a9c17dbf1d56d391dca8f4e7f819e586
   pullPolicy: Always
-j17j9Image:
+j17Image:
   repository: itzg/minecraft-server
-  tag: 2023.11.1-java17-openj9@sha256:6e3078b58bb3728c0ccdf18402712faab39624cfcc24a72ef237d31579fd2bdc
+  tag: 2024.10.1-java17@sha256:ee928123677e7c11b3eac2eff74f4021bd538de2752640c00bca65a0b99f5790
   pullPolicy: Always
 j17jdkImage:
   repository: itzg/minecraft-server
-  tag: 2023.11.1-java17-jdk@sha256:e8ddd3a22c01937554332dae55bce53a0149740ccf22a6105138126382dfee38
+  tag: 2024.6.1-java17-jdk@sha256:2c43fcede436aff9f50b1adf4448d55d221651be471ef41412232c141bfa89f6
   pullPolicy: Always
 j17graalvmImage:
   repository: itzg/minecraft-server
-  tag: 2023.11.1-java17-graalvm@sha256:1ede29fa5a96bd278d64400f548dde321c7c0762922c1097f17ba5c6a6f047f6
+  tag: 2024.10.1-java17-graalvm@sha256:c782346b70fdaba64369bd7ee363109d23e9efd71a389a05eab20e3c7c664395
   pullPolicy: Always
 j17alpineImage:
   repository: itzg/minecraft-server
-  tag: 2023.11.1-java17-alpine@sha256:c330401db62f07fbf447eef1c269394e8690d6b659f679821315f5c4c6463849
+  tag: 2024.10.1-java17-alpine@sha256:36da1fadbd791347e5fa60c0939ebc4eedf5386dc96493efe7bc4c651e05c946
   pullPolicy: Always
 j11Image:
   repository: itzg/minecraft-server
-  tag: 2023.11.1-java11@sha256:749a17891fb0a2b211062fc2d7a3dd97e0fc76e71e9a908906ec8310cc8aaf95
-  pullPolicy: Always
-j11jdkImage:
-  repository: itzg/minecraft-server
-  tag: 2023.11.1-java11-jdk@sha256:d8167b33d2da2d8f5ca1e41b9a170c07561b59497b4206140796ba2e98569a2a
-  pullPolicy: Always
-j11j9Image:
-  repository: itzg/minecraft-server
-  tag: 2023.11.1-java11-openj9@sha256:f327ea42b512896544fc7b44f1029d311ebf79312863a2ceb909ea6570ccf410
+  tag: 2024.10.1-java11@sha256:8f59c748e47b49c5d05e5761ecbe9733afe63296e0ba0ce42d7c4e4542aee75c
   pullPolicy: Always
 j8Image:
   repository: itzg/minecraft-server
-  tag: 2023.11.1-java8@sha256:cf744e3945c3a3c3dd4c4f98e639f9b959c73d6766217dda42fdf91fc9f80b27
+  tag: 2024.10.1-java8@sha256:98f4c77a3452b0ea4fe9abc8acb1078f8c0d4e45de048f02d88d6a9255318c73
   pullPolicy: Always
 j8graalvmImage:
   repository: itzg/minecraft-server
-  tag: 2023.11.1-java8-graalvm-ce@sha256:8a878a24266f5d6c8d448b28f8c8bcc6d167cc5f5c10e629913c9a58db0d7cad
+  tag: 2024.10.1-java8-graalvm-ce@sha256:f1dc38672e70a4ed2cf738a0cccce7246b11f50f28154eac06afca9d086cb35f
   pullPolicy: Always
 j8jdkImage:
   repository: itzg/minecraft-server
-  tag: 2023.11.1-java8-jdk@sha256:3810bf10ff4f637851a950c47b2c4eb6de377b3afdde25ebcb16d263f536c6dd
+  tag: 2024.10.1-java8-jdk@sha256:32f5ecc8b086d8ed8fb48f0b66f9ed26d463634baf88b6d090370a3909431321
   pullPolicy: Always
-j8j9Image:
+j8alpineImage:
   repository: itzg/minecraft-server
-  tag: 2023.11.1-java8-openj9@sha256:076c6a872b241df47580064171e67ff6d9b1826134169fe4201c5cedd3456f58
+  tag: 2024.9.0-java8-alpine@sha256:ee8505b9670a82b7703ec35b2a87fe9b7f7823b50ae50fad18bf1fe511e577f9
+  pullPolicy: Always
+mcBackupImage:
+  repository: itzg/mc-backup
+  tag: latest@sha256:b40aebf4f089b373495c92483c7990222560977b5e703de507733401b38456f8
   pullPolicy: Always
 
 service:
@@ -77,6 +73,17 @@ service:
       rcon:
         enabled: true
         port: 25575
+
+mcbackup:
+  zstd_params:
+    - --long=25
+    - --single-thread
+  # comma separated list
+  excludes:
+    - "*.jar"
+    - "cache"
+    - "logs"
+    - "*.tmp"
 
 workload:
   main:
@@ -133,6 +140,7 @@ workload:
             ONLINE_MODE: true
             MEMORY: 2048M
             RCON_PASSWORD: "secretrconpass"
+            # PACKWIZ_URL: ""
             # CUSTOM_SERVER: ""
             # QUILT_LOADER_VERSION: ""
             # QUILT_LAUNCHER: ""
@@ -149,7 +157,6 @@ workload:
             # BUKKIT_DOWNLOAD_URL: ""
             # PAPERBUILD: ""
             # PAPER_DOWNLOAD_URL: ""
-            # PACKWIZ_URL: ""
             # AIRPLANE_BUILD: "lastSuccessfulBuild"
             # MAGMA_CHANNEL: "stable"
             # MOHIST_BUILD: ""
@@ -187,10 +194,54 @@ workload:
             # CF_OVERRIDES_SKIP_EXISTING
             # CF_PARALLEL_DOWNLOADS
             # CF_SET_LEVEL_FROM
+        mcbackup:
+          enabled: true
+          imageSelector: mcBackupImage
+          probes:
+            liveness:
+              enabled: false
+            readiness:
+              enabled: false
+            startup:
+              enabled: false
+          env:
+            BACKUP_METHOD: "tar"
+            DEST_DIR: "{{.Values.persistence.backups.mountPath }}"
+            SRC_DIR: "{{.Values.persistence.data.mountPath }}"
+            SERVER_PORT: "{{ .Values.service.main.ports.main.port }}"
+            RCON_HOST: '{{ printf "%s-rcon" (include "tc.v1.common.lib.chart.names.fullname" $) }}'
+            RCON_PORT: "{{ .Values.service.rcon.ports.rcon.port }}"
+            RCON_PASSWORD: "{{ .Values.workload.main.podSpec.containers.main.env.RCON_PASSWORD }}"
+            SERVER_HOST: '{{ include "tc.v1.common.lib.chart.names.fullname" $ }}'
+
+            ZSTD_PARAMETERS: '{{ join " " .Values.mcbackup.zstd_params }}'
+            EXCLUDES: '{{ join "," .Values.mcbackup.excludes }}'
+
+            INITIAL_DELAY: "2m"
+            BACKUP_INTERVAL: "24h"
+            PRUNE_BACKUPS_DAYS: "7"
+            PAUSE_IF_NO_PLAYERS: "false"
+            PLAYERS_ONLINE_CHECK_INTERVAL: "5m"
+            LINK_LATEST: "false"
+            TAR_COMPRESS_METHOD: "zstd"
+
 persistence:
   data:
     enabled: true
-    mountPath: "/data"
+    targetSelector:
+      main:
+        main:
+          mountPath: /data
+        mcbackup:
+          mountPath: /data
+          readOnly: true
+  backups:
+    enabled: true
+    targetSelector:
+      main:
+        mcbackup:
+          mountPath: /backups
+
 portal:
   open:
     enabled: false

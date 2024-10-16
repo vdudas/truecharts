@@ -1,0 +1,20 @@
+{
+      "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
+  "helm-values": {
+    "fileMatch": [
+      "(^|/)clusters/.+\\.ya?ml(?:\\.j2)?$",
+      "(^|/)kubernetes/.+\\.ya?ml(?:\\.j2)?$",
+      "(^|/)repositories/.+\\.ya?ml(?:\\.j2)?$",
+      "(^|/)charts/.+\\.ya?ml(?:\\.j2)?$",
+    ],
+    "enabled": true, // Enable image reference updates in values.yaml
+    "updateTypes": ["major", "minor", "patch", "digest", "pin"], // Allow updates for all version types
+    "semanticCommitScope": "container"
+  },
+  "branchPrefix": "helm-values-",
+  "ignore": [
+    // Add any global ignores here if needed
+  ],
+  "requiredStatusChecks": null,
+}

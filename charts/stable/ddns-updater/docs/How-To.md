@@ -1,4 +1,6 @@
-# How To
+---
+title: How To
+---
 
 You can use the following json code to construct a json object to be used for the `config` field or use the upstream doc for your specific domain provider [here](https://github.com/qdm12/ddns-updater#configuration):
 
@@ -57,7 +59,7 @@ The `ip_version` should always be `ipv4` unless your special :/.
 }
 ```
 
-:::info
+:::tip
 
 You can also reach us using Discord for real-time feedback and support
 If you found a bug in our chart, open a Github issue but generally it's advised to contact us on Discord first in most cases.

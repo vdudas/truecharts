@@ -1,7 +1,7 @@
 image:
   repository: modem7/docker-rickroll
   pullPolicy: IfNotPresent
-  tag: latest@sha256:d3f292cb5cbce0adc6392c3e669e6658f4490c0fd37ffc4857fdb2357178646b
+  tag: latest@sha256:e615791e7c171befae47bcc8c515d180d9fc73a397edf6c229a5ef538d9b55a4
 securityContext:
   container:
     runAsNonRoot: false
@@ -14,6 +14,7 @@ service:
       main:
         protocol: http
         port: 10289
+        targetPort: 8080
 workload:
   main:
     podSpec:
@@ -27,7 +28,6 @@ workload:
             startup:
               type: http
           env:
-            PORT: "{{ .Values.service.main.ports.main.port }}"
             TITLE: "Rickroll"
             HEIGHT: "100vh"
             WIDTH: "100%"

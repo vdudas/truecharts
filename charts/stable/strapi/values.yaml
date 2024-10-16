@@ -1,6 +1,6 @@
 image:
   repository: naskio/strapi
-  tag: 4.15.4-alpine@sha256:a3cac6a221d7ced95e7bf765ec0dc4c8c167986a9aa7a302f7a732c2777548e6
+  tag: 4.16.2-alpine@sha256:84690f65d59f7a33a456ad82452ac839aed54c18d016fca34159012c6dd2d0af
   pullPolicy: Always
 service:
   main:

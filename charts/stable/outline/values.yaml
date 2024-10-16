@@ -1,7 +1,7 @@
 image:
   repository: outlinewiki/outline
   pullPolicy: IfNotPresent
-  tag: 0.74.0@sha256:f630dfbf53ce61c0742052571cef6938a755f04c9001b51785621be9cb7e5581
+  tag: 0.80.2@sha256:fde16562c9b8c67bc7855c71d8a1203125d63fcefc7ebb4e649de35a9281e6df
 service:
   main:
     ports:
@@ -35,6 +35,7 @@ workload:
           imageSelector: image
           type: init
           env:
+            URL: "{{ tpl .Values.workload.main.podSpec.containers.main.env.URL $ }}"
             DATABASE_URL:
               secretKeyRef:
                 name: cnpg-main-urls
@@ -75,6 +76,8 @@ workload:
             WEB_CONCURRENCY: 1
             MAXIMUM_IMPORT_SIZE: 5120000
             DEFAULT_LANGUAGE: "en_US"
+            FILE_STORAGE: ""
+            FILE_STORAGE_UPLOAD_MAX_SIZE: ""
             # TEAM_LOGO: ""
             # COLLABORATION_URL: ""
             # SLACK_KEY: ""
@@ -130,3 +133,7 @@ workload:
               secretKeyRef:
                 name: secrets
                 key: UTILS_SECRET
+persistence:
+  data:
+    enabled: true
+    mountPath: /var/lib/outline/data

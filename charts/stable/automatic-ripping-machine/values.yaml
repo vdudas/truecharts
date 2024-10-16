@@ -1,7 +1,7 @@
 image:
-  repository: tccr.io/truecharts/automatic-ripping-machine
+  repository: automaticrippingmachine/automatic-ripping-machine
   pullPolicy: IfNotPresent
-  tag: v2.6.60@sha256:bf79fee03b4ef8867ccbee6448748bf58b86a59c2400dd9beb5a4b926c6e7c10
+  tag: 2.8.1@sha256:5db2d53ae14b2959bac9b9af37b54b1dd83206573bba489b4af411ac7ebe825a
 
 securityContext:
   container:
@@ -22,6 +22,24 @@ service:
 workload:
   main:
     podSpec:
+      # force 568:568 for /home/arm & etc/arm/config
+      initContainers:
+        arm-perms:
+          type: install
+          enabled: true
+          imageSelector: "image"
+          command:
+            - /bin/sh
+          args:
+            - -c
+            - |
+              echo "Setting ownership to {{ .Values.securityContext.container.PUID }}:{{ .Values.securityContext.pod.fsGroup }} on data directory [/home/arm] ..."
+              chown {{ .Values.securityContext.container.PUID }}:{{ .Values.securityContext.pod.fsGroup }} /home/arm
+
+              echo "Setting ownership to {{ .Values.securityContext.container.PUID }}:{{ .Values.securityContext.pod.fsGroup }} on data directory [/etc/arm/config] ..."
+              chown {{ .Values.securityContext.container.PUID }}:{{ .Values.securityContext.pod.fsGroup }} /etc/arm/config
+
+              echo "Finished."
       containers:
         main:
           env:
@@ -33,9 +51,17 @@ persistence:
   config:
     enabled: true
     mountPath: "/etc/arm/config"
+    targetSelector:
+      main:
+        main: {}
+        arm-perms: {}
   arm:
     enabled: true
     mountPath: "/home/arm"
+    targetSelector:
+      main:
+        main: {}
+        arm-perms: {}
 
 portal:
   open:

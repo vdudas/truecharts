@@ -1,13 +1,14 @@
 image:
   repository: clamav/clamav
   pullPolicy: IfNotPresent
-  tag: 1.2.1@sha256:d584c29eefc29e138eb14f243abef2f6712cffecac52194626a2b2f6bb3ec2c7
+  tag: 1.4.1@sha256:a0adcd5364585643193c9c2aedc299d0be4d0a69cbc47b79256c9ce75b9e9fb3
 securityContext:
   container:
     readOnlyRootFilesystem: false
     runAsNonRoot: false
     runAsUser: 0
     runAsGroup: 0
+
 clamav:
   report_path: "/logs"
   # User Defined

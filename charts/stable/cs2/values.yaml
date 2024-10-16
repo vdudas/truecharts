@@ -1,7 +1,7 @@
 image:
-  repository: tccr.io/truecharts/cs2
+  repository: ich777/steamcmd
   pullPolicy: IfNotPresent
-  tag: latest@sha256:24f52ee1c81175980b76914803bc3ca15c02d4217ccc1c0baf414b8cd2d5f44f
+  tag: cs2@sha256:15f64517c2783293415f64c35b0ebb39a00fc40ef671a9c37207fcbb63e2a1f0
 
 securityContext:
   container:
@@ -15,7 +15,13 @@ service:
       main:
         protocol: udp
         port: 27015
-
+  rcon:
+    enabled: true
+    ports:
+      rcon:
+        enabled: true
+        protocol: tcp
+        port: 27020
 cs2:
   game:
     id: 730

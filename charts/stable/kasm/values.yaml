@@ -1,7 +1,7 @@
 image:
   pullPolicy: IfNotPresent
   repository: kasmweb/workspaces
-  tag: 1.14.0@sha256:ccf420bd8c238c01702942d155f355e0af085564e5c1421296698b55d3c685d6
+  tag: 1.15.1@sha256:65a84eb389ef2a63055b39648fe0606299d26da6c297b62f5a267268d0db1f3e
 kasm:
   mountUdev: false
   mountInput: false

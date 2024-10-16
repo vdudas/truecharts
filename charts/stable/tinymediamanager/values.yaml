@@ -1,6 +1,6 @@
 image:
   repository: tinymediamanager/tinymediamanager
-  tag: 4.3.14@sha256:9ced1d2a36fbe8ad716e72b48a1bb4e7ba29e67fa3d3ed42cba914778a9a59fc
+  tag: 5.0.12@sha256:d63de91b562022de6a835f96251a22bc87182342ed2366380a092ffaf1cdae7f
   pullPolicy: IfNotPresent
 service:
   main:

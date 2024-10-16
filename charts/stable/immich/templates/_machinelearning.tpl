@@ -1,7 +1,11 @@
 {{/* Define the machinelearning container */}}
 {{- define "immich.machinelearning" -}}
 {{- $fname := (include "tc.v1.common.lib.chart.names.fullname" .) -}}
-{{- $serverUrl := printf "http://%v:%v/api/server-info/ping" $fname .Values.service.main.ports.main.port }}
+{{- $serverUrl := printf "http://%v:%v/api/server/ping" $fname .Values.service.main.ports.main.port }}
+{{- $img := "mlImage" -}}
+{{- with .Values.immich.mlImageType -}}
+  {{- $img = . -}}
+{{- end }}
 enabled: true
 type: Deployment
 podSpec:
@@ -13,7 +17,7 @@ podSpec:
     machinelearning:
       enabled: true
       primary: true
-      imageSelector: mlImage
+      imageSelector: {{ $img }}
       securityContext:
         capabilities:
           disableS6Caps: true

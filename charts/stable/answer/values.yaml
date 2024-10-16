@@ -1,7 +1,7 @@
 image:
-  repository: tccr.io/truecharts/answer
+  repository: answerdev/answer
   pullPolicy: IfNotPresent
-  tag: v1.2.0@sha256:70a578170bca4a7a1040d44cb5ff143d5e9c2c2f32f9d48f1ad4519d61c35451
+  tag: 1.2.0@sha256:2e93c6a664632c63864fd4af4c25ea3f9de7f305f833f0bbbad53d1c914a71e9
 
 service:
   main:

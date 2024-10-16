@@ -1,7 +1,7 @@
 image:
+  repository: foxxmd/multi-scrobbler
+  tag: latest@sha256:e5b4dbe5a3b13ba7826129fb1ad10117d07201535818e5bf4a032e3353ea147b
   pullPolicy: IfNotPresent
-  repository: tccr.io/truecharts/multi-scrobbler
-  tag: v0.6.1@sha256:a08454006d704a1ca96a6dcb89f28556b636c5f131f58eca37014d54bfd74474
 
 securityContext:
   container:

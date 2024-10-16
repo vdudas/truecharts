@@ -1,6 +1,6 @@
 image:
   repository: mpepping/cyberchef
-  tag: v10.5.2@sha256:51cbc1463da6a93a6884268e01759e860288226cf6e2613b3d97e054be82849a
+  tag: v10.19.2@sha256:5b88766f5735c0a513401e652feaffaba0681403409384184d7dc1e0bb1e3dea
   pullPolicy: IfNotPresent
 securityContext:
   container:

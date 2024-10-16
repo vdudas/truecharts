@@ -1,48 +1,44 @@
-kubeVersion: ">=1.24.0-0"
+annotations:
+  max_scale_version: 24.04.1
+  min_scale_version: 24.04.0
+  truecharts.org/category: finance
+  truecharts.org/max_helm_version: "3.15"
+  truecharts.org/min_helm_version: "3.11"
+  truecharts.org/train: stable
 apiVersion: v2
-name: ghostfolio
-version: 0.6.0
-appVersion: 2.30.0
-description:
-  Ghostfolio is a privacy-first, open source dashboard for your personal
-  finances. Break down your asset allocation, know your net worth and make solid,
-  data-driven investment decisions.
-home: https://truecharts.org/charts/stable/ghostfolio
-icon: https://truecharts.org/img/hotlink-ok/chart-icons/ghostfolio.png
-deprecated: false
-sources:
-  - https://github.com/ghostfolio/ghostfolio
-  - https://ghostfol.io/
-  - https://github.com/truecharts/charts/tree/master/charts/stable/ghostfolio
-  - https://hub.docker.com/r/ghostfolio/ghostfolio
-maintainers:
-  - name: TrueCharts
-    email: info@truecharts.org
-    url: https://truecharts.org
-keywords:
-  - ghostfolio
-  - finance
+appVersion: 2.115.0
 dependencies:
   - name: common
-    version: 14.3.5
-    repository: https://library-charts.truecharts.org
+    version: 25.0.0
+    repository: oci://tccr.io/truecharts
     condition: ""
     alias: ""
     tags: []
     import-values: []
   - name: redis
-    version: 7.0.6
-    repository: https://deps.truecharts.org
+    version: 15.3.1
+    repository: oci://tccr.io/truecharts
     condition: ""
     alias: ""
     tags: []
     import-values: []
-annotations:
-  max_scale_version: 23.10.1
-  min_scale_version: 22.12.4
-  truecharts.org/SCALE-support: "true"
-  truecharts.org/category: finance
-  truecharts.org/max_helm_version: "3.13"
-  truecharts.org/min_helm_version: "3.12"
-  truecharts.org/train: stable
+deprecated: false
+description: Ghostfolio is a privacy-first, open source dashboard for your personal finances. Break down your asset allocation, know your net worth and make solid, data-driven investment decisions.
+home: https://truecharts.org/charts/stable/ghostfolio
+icon: https://truecharts.org/img/hotlink-ok/chart-icons/ghostfolio.webp
+keywords:
+  - ghostfolio
+  - finance
+kubeVersion: '>=1.24.0-0'
+maintainers:
+  - name: TrueCharts
+    email: info@truecharts.org
+    url: https://truecharts.org
+name: ghostfolio
+sources:
+  - https://ghostfol.io/
+  - https://github.com/ghostfolio/ghostfolio
+  - https://github.com/truecharts/charts/tree/master/charts/stable/ghostfolio
+  - https://hub.docker.com/r/ghostfolio/ghostfolio
 type: application
+version: 6.30.0

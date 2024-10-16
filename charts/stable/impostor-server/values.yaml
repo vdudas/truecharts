@@ -1,11 +1,11 @@
 image:
   repository: aeonlucid/impostor
   pullPolicy: IfNotPresent
-  tag: v1.8.4@sha256:b01df7535ba5f39d01eb3c6620199d8bc6e3182d9c685307eb21001d7ad23273
+  tag: v1.10.0@sha256:408996af579e456659b99dc88b57b7f278874392c77b2d1ffe501b0b69880c31
 nightlyImage:
   repository: aeonlucid/impostor
+  tag: nightly@sha256:ad846641b3f78c8ac9fddaae5a5bc08b9a776cbdd19e750ff90f1bbef5567dde
   pullPolicy: IfNotPresent
-  tag: nightly@sha256:97876235961768ebaa870d36a63c44c02e8bb57511f69a51b0f473ae0586d0c0
 service:
   main:
     ports:

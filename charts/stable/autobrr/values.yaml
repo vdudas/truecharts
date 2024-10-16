@@ -1,14 +1,19 @@
 image:
   repository: ghcr.io/autobrr/autobrr
   pullPolicy: IfNotPresent
-  tag: v1.34.1@sha256:7a21e928f9e6fe608c99ea01714cd261f093adc640cb104848651a264cb490b2
+  tag: v1.47.1@sha256:5364237a98b12bb269384dd4f4feaf7583027591c26bc2e6aaac0baa4e142b34
+
 service:
   main:
     ports:
       main:
-        port: 7474
         protocol: http
-        targetPort: 7474
+        port: 7474
+
+autobrr:
+  # ERROR | DEBUG |INFO | WARN | TRACE
+  log_level: DEBUG
+
 workload:
   main:
     podSpec:
@@ -16,30 +21,24 @@ workload:
         main:
           probes:
             liveness:
-              enabled: true
-              type: exec
-              command:
-                - /bin/sh
-                - -c
-                - curl --fail localhost:7474/
+              type: http
             readiness:
-              enabled: true
-              type: exec
-              command:
-                - /bin/sh
-                - -c
-                - curl --fail localhost:7474/
+              type: http
             startup:
-              enabled: true
-              type: exec
-              command:
-                - /bin/sh
-                - -c
-                - curl --fail localhost:7474/
+              type: tcp
+
 persistence:
   config:
     enabled: true
     mountPath: /config
+  autobrr-config:
+    enabled: true
+    type: configmap
+    objectName: autobrr-config
+    mountPath: /config/config.toml
+    subPath: config.toml
+    readOnly: true
+
 portal:
   open:
     enabled: true

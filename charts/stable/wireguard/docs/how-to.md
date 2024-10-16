@@ -1,4 +1,6 @@
-# How-To
+---
+title: How-To
+---
 
 ## Scale App
 
@@ -7,7 +9,7 @@ Store your wireguard config file in a directory, on one of your pools.
 Example `/mnt/pool/vpn.conf` (Name can be any name. eg `wg0.conf`, `x-site.conf`, etc)
 Example config content:
 
-```conf
+```toml
 [Interface]
 Address = 10.0.0.1/24
 ListenPort = 51820
@@ -21,7 +23,7 @@ Endpoint = wg.example:51820
 
 UI Configuration is simple as that:
 
-![wg-configuration](img/wg-configuration.png)
+![wg-configuration](./img/wg-configuration.png)
 
 Tick `Killswitch` if you want to kill traffic when VPN is down.
 Add networks in `Excluded IPv{4,6} Networks` that you want to continue their traffic when VPN is down.

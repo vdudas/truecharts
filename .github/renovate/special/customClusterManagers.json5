@@ -1,0 +1,26 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": ["Process custom dependencies"],
+      "fileMatch": [".ya?ml(?:\\.j2)?$"],
+      "matchStrings": [
+        "datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( repository=(?<registryUrl>\\S+))?\\n.+: (&\\S+\\s)?(?<currentValue>\\S+)",
+        "datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\\n.+/(?<currentValue>(v|\\d)[^/]+)"
+      ],
+      "datasourceTemplate": "{{#if datasource}}{{{datasource}}}{{else}}github-releases{{/if}}",
+      "branchPrefix": "regex-",
+      "pinDigests": false // Set to false to not pin digest references
+    },
+    {
+      "customType": "regex",
+      "description": ["Process CloudnativePG Postgresql version"],
+      "fileMatch": ["(^|/)clusters/.+\\.ya?ml(?:\\.j2)?$"],
+      "matchStrings": ["imageName: (?<depName>\\S+):(?<currentValue>.*\\-.*)"],
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "redhat",
+      "branchPrefix": "regex-"
+    }
+  ]
+}

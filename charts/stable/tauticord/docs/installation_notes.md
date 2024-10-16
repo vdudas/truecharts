@@ -1,8 +1,10 @@
-# Installation Notes
+---
+title: Installation Notes
+---
 
-basic Notes for tauticord.
+Basic Notes for tauticord.
 
-:::note requirements
+:::note[requirements]
 
 - A Plex Media Server
 - Tautulli (formerly known as PlexPy)
@@ -20,7 +22,7 @@ basic Notes for tauticord.
 
 :::
 
-:::note Common Issues
+:::note[Common Issues]
 
 - On startup, Tauticord attempts to upload a set of custom emojis that it will use when displaying stream information ( if they do not already exist). Your bot will need to have the Manage Emojis permission in order to do this.
 - Discord has a limit of 50 custom emojis per server. If you have reached this limit, you will need to remove some of your existing emojis before Tauticord can upload its own.

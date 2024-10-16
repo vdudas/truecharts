@@ -1,6 +1,6 @@
 image:
   repository: mattermost/mattermost-enterprise-edition
-  tag: release-9.4@sha256:ccba1e1893be33dd670332f3ed0aac8d7984d43fa556ad5174c21c2d91a2331e
+  tag: release-9.6@sha256:f09129649ff61b7f259d30c413da88f9b69fe470f32299cca57632f9f91601d0
   pullPolicy: IfNotPresent
 workload:
   main:

@@ -1,7 +1,7 @@
 image:
   repository: ghcr.io/static-web-server/static-web-server
   pullPolicy: IfNotPresent
-  tag: 2.24.1@sha256:951f2dfb153ccccc3b6c3f44016180c88fc3cd3206808023182e8c85b93ebfe5
+  tag: 2.33.0@sha256:04def7ef00cfb0dd7fb869e68a76140ce79cc607f0d5773b873c8d69d4f6fdbf
 service:
   main:
     ports:

@@ -1,6 +1,6 @@
 image:
   repository: requarks/wiki
-  tag: 2.5.300@sha256:5419ec3f4ac6a0bc9fd1b6b126249fe5ad72c02f7a47e885a15e881f10cf7eef
+  tag: 2.5.305@sha256:707fa8f0c739d098346eff46af4ef3e71f10df88b0b49785c70b4cf0075274d5
   pullPolicy: IfNotPresent
 service:
   main:

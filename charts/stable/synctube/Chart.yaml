@@ -1,22 +1,24 @@
-kubeVersion: ">=1.24.0-0"
+annotations:
+  max_scale_version: 24.04.1
+  min_scale_version: 24.04.0
+  truecharts.org/category: Cloud
+  truecharts.org/max_helm_version: "3.15"
+  truecharts.org/min_helm_version: "3.11"
+  truecharts.org/train: stable
 apiVersion: v2
-name: synctube
-version: 4.0.10
 appVersion: latest
-description:
-  Synchronized video viewing with chat and other features. Lightweight
-  modern implementation and very easy way to run locally.
-home: https://truecharts.org/charts/stable/synctube
-icon: https://truecharts.org/img/hotlink-ok/chart-icons/synctube.png
+dependencies:
+  - name: common
+    version: 25.0.0
+    repository: oci://tccr.io/truecharts
+    condition: ""
+    alias: ""
+    tags: []
+    import-values: []
 deprecated: false
-sources:
-  - https://github.com/RblSb/SyncTube
-  - https://github.com/truecharts/charts/tree/master/charts/stable/synctube
-  - https://hub.docker.com/r/littlestache/synctube
-maintainers:
-  - name: TrueCharts
-    email: info@truecharts.org
-    url: https://truecharts.org
+description: Synchronized video viewing with chat and other features. Lightweight modern implementation and very easy way to run locally.
+home: https://truecharts.org/charts/stable/synctube
+icon: https://truecharts.org/img/hotlink-ok/chart-icons/synctube.webp
 keywords:
   - synctube
   - Cloud
@@ -25,20 +27,15 @@ keywords:
   - MediaApp-Video
   - MediaServer-Video
   - Network-Web
-dependencies:
-  - name: common
-    version: 14.3.5
-    repository: https://library-charts.truecharts.org
-    condition: ""
-    alias: ""
-    tags: []
-    import-values: []
-annotations:
-  max_scale_version: 23.10.1
-  min_scale_version: 22.12.4
-  truecharts.org/SCALE-support: "true"
-  truecharts.org/category: Cloud
-  truecharts.org/max_helm_version: "3.13"
-  truecharts.org/min_helm_version: "3.12"
-  truecharts.org/train: stable
+kubeVersion: '>=1.24.0-0'
+maintainers:
+  - name: TrueCharts
+    email: info@truecharts.org
+    url: https://truecharts.org
+name: synctube
+sources:
+  - https://github.com/RblSb/SyncTube
+  - https://github.com/truecharts/charts/tree/master/charts/stable/synctube
+  - https://hub.docker.com/r/littlestache/synctube
 type: application
+version: 9.2.0

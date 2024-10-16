@@ -1,6 +1,8 @@
-# Channels DVR Installation Notes
+---
+title: Channels DVR Installation Notes
+---
 
-:::danger TV Everywhere Permissions
+:::danger[TV Everywhere Permissions]
 
 If using TV Everywhere, `runAsUser` and `runAsGroup` must both be changed to `0` and `readOnlyRootFilesystem` must be changed to `false`.
 

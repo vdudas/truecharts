@@ -1,0 +1,26 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: dtjs48jkt/twonkyserver
+  tag: latest@sha256:d2a08a62ccd5dcd9f38833e1470cfbb008bc4de44c14b0bc39bb067b0afb0133
+persistence:
+  config:
+    enabled: true
+    mountPath: /config
+  data:
+    enabled: true
+    mountPath: /data
+portal:
+  open:
+    enabled: true
+securityContext:
+  container:
+    readOnlyRootFilesystem: false
+    runAsGroup: 0
+    runAsUser: 0
+service:
+  main:
+    ports:
+      main:
+        port: 9000
+        protocol: tcp
+        targetPort: 9000

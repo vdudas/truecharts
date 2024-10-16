@@ -2,10 +2,8 @@
 enabled: true
 primary: true
 imageSelector: image
-command: /bin/sh
-args:
-  - -c
-  - /usr/src/app/start-server.sh
+resources:
+  excludeExtra: true
 securityContext:
   capabilities:
     disableS6Caps: true
@@ -16,22 +14,17 @@ envFrom:
       name: common-config
   - secretRef:
       name: deps-secret
-  - secretRef:
-      name: secret
 probes:
   liveness:
     enabled: true
-    type: http
-    path: /api/server-info/ping
-    port: {{ .Values.service.main.ports.main.port }}
+    type: exec
+    command: /usr/src/app/bin/immich-healthcheck
   readiness:
     enabled: true
-    type: http
-    path: /api/server-info/ping
-    port: {{ .Values.service.main.ports.main.port }}
+    type: exec
+    command: /usr/src/app/bin/immich-healthcheck
   startup:
     enabled: true
-    type: http
-    path: /api/server-info/ping
-    port: {{ .Values.service.main.ports.main.port }}
+    type: exec
+    command: /usr/src/app/bin/immich-healthcheck
 {{- end -}}

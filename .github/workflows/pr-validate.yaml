@@ -17,7 +17,7 @@ jobs:
       addedOrModifiedCharts: ${{ steps.collect-changes.outputs.addedOrModifiedCharts }}
     steps:
       - name: Checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+        uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4
 
       - name: Collect changes
         id: collect-changes
@@ -42,14 +42,6 @@ jobs:
       chartChangesDetected: ${{ needs.pr-changes.outputs.addedOrModified }}
       modifiedCharts: ${{ needs.pr-changes.outputs.addedOrModifiedCharts }}
 
-  catalog-test:
-    uses: ./.github/workflows/catalog-test.yaml
-    needs:
-      - pr-changes
-    with:
-      checkoutCommit: ${{ needs.charts-changelog.outputs.commitHash }}
-      chartChangesDetected: ${{ needs.pr-changes.outputs.addedOrModified }}
-
   print_head_msg:
     name: print commit message
     runs-on: ubuntu-latest
@@ -57,7 +49,7 @@ jobs:
       head-commit-message: ${{ steps.get_head_commit_message.outputs.headCommitMsg }}
     steps:
       - name: Get repo
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+        uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: verbose head git commit message
@@ -69,19 +61,19 @@ jobs:
   automerge-and-approve:
     needs:
       - pr-changes
-      - catalog-test
       - charts-test
       - charts-lint
       - print_head_msg
-    if: ${{ contains( needs.print_head_msg.outputs.head-commit-message, 'update container image' ) }}
+    if: ${{ contains( needs.print_head_msg.outputs.head-commit-message, 'By Renovate' ) || contains( needs.print_head_msg.outputs.head-commit-message, '.all-contributorsrc' ) }}
     name: Automerge and Approve build
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - uses: hmarr/auto-approve-action@v3
         with:
-          github-token: "${{ secrets.PERS_PAT }}"
+          github-token: "${{ secrets.OR_PAT }}"
       - name: automerge
-        uses: pascalgn/automerge-action@22948e0bc22f0aa673800da838595a3e7347e584 # v0.15.6
+        uses: pascalgn/automerge-action@7961b8b5eec56cc088c140b56d864285eabd3f67 # v0.16.4
         env:
           GITHUB_TOKEN: "${{ secrets.BOT_TOKEN }}"
           UPDATE_RETRIES: 12

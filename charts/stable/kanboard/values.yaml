@@ -1,6 +1,6 @@
 image:
   repository: kanboard/kanboard
-  tag: v1.2.33@sha256:2a15f8fdd37d44dd7acea040a0b8e56134060ecac1f6068168e2d2448723eae7
+  tag: v1.2.40@sha256:b64239d46ef72650438b8895960bcbd751fe1cf9a702134ca96a19829cb82cdf
   pullPolicy: IfNotPresent
 service:
   main:

@@ -1,6 +1,6 @@
 image:
   repository: jlesage/tsmuxer
-  tag: v23.11.2@sha256:b3e826e6089d1f848a9939d362cf2a73d420218c267dddf5d58d4b301ddcde3e
+  tag: v24.09.1@sha256:8c30f8ebcde9c3c24a3eb0ba5a7ee300a3682288a34e9d7cb274b6fee6a04118
   pullPolicy: IfNotPresent
 service:
   main:

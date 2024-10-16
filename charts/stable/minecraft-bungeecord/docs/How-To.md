@@ -1,4 +1,6 @@
-# How To
+---
+title: How To
+---
 
 The following sections are just _examples_ and may not represent best practices or all use cases.
 The only tested servers were Spigot Based variants by PaperMC, Paper version **1.19.2**, the latest current MC version.
@@ -256,7 +258,7 @@ map = "Velocity"
 show-plugins = false
 ```
 
-:::info
+:::tip
 
 There's currently a known issue with **limbo server** when attemptng to connect to a **1.19.2** velocity proxy server and using **player-info-forwarding-mode = "modern"**. You can track the current issue here [issue 50](https://github.com/LOOHP/Limbo/issues/50).
 

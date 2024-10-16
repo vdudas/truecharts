@@ -1,7 +1,7 @@
 image:
   pullPolicy: IfNotPresent
   repository: shaneisrael/fireshare
-  tag: 1.2.15@sha256:7b567c9c5b58b471700641a03bdb45d87fee1f18940e08d364c0b4d07a91b878
+  tag: v1.2.20@sha256:dcc3db5472357897a71f3aa4bb51a9700ebde5bc732fb771344f0670ab2d8f1a
 
 securityContext:
   container:
@@ -21,6 +21,14 @@ workload:
                 key: SECRET_KEY
             MINUTES_BETWEEN_VIDEO_SCANS: 5
             ADMIN_PASSWORD: "changeme"
+            # TODO ADD LDAP
+            # LDAP_ENABLE: false
+            # LDAP_URL: ""
+            # LDAP_BINDDN: ""
+            # LDAP_PASSWORD: ""
+            # LDAP_BASEDN: ""
+            # LDAP_USER_FILTER: ""
+            # LDAP_ADMIN_GROUP: ""
 
 service:
   main:

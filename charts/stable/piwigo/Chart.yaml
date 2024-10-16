@@ -1,46 +1,45 @@
-kubeVersion: ">=1.24.0-0"
+annotations:
+  max_scale_version: 24.04.1
+  min_scale_version: 24.04.0
+  truecharts.org/category: media
+  truecharts.org/max_helm_version: "3.15"
+  truecharts.org/min_helm_version: "3.11"
+  truecharts.org/train: stable
 apiVersion: v2
-name: piwigo
-version: 8.0.1
-appVersion: 14.0.0
-description: A photo gallery software for the web.
-home: https://truecharts.org/charts/stable/piwigo
-icon: https://truecharts.org/img/hotlink-ok/chart-icons/piwigo.png
-deprecated: false
-sources:
-  - https://github.com/linuxserver/docker-piwigo
-  - https://github.com/truecharts/charts/tree/master/charts/stable/piwigo
-  - https://ghcr.io/linuxserver/piwigo
-maintainers:
-  - name: TrueCharts
-    email: info@truecharts.org
-    url: https://truecharts.org
-keywords:
-  - piwigo
-  - gallery
-  - photo
-  - image
+appVersion: 14.5.0
 dependencies:
   - name: common
-    version: 14.3.5
-    repository: https://library-charts.truecharts.org
+    version: 25.0.0
+    repository: oci://tccr.io/truecharts
     condition: ""
     alias: ""
     tags: []
     import-values: []
   - name: mariadb
-    version: 7.0.70
-    repository: https://deps.truecharts.org/
+    version: 15.4.1
+    repository: oci://tccr.io/truecharts
     condition: mariadb.enabled
     alias: ""
     tags: []
     import-values: []
-annotations:
-  max_scale_version: 23.10.1
-  min_scale_version: 22.12.4
-  truecharts.org/SCALE-support: "true"
-  truecharts.org/category: media
-  truecharts.org/max_helm_version: "3.13"
-  truecharts.org/min_helm_version: "3.12"
-  truecharts.org/train: stable
+deprecated: false
+description: A photo gallery software for the web.
+home: https://truecharts.org/charts/stable/piwigo
+icon: https://truecharts.org/img/hotlink-ok/chart-icons/piwigo.webp
+keywords:
+  - piwigo
+  - gallery
+  - photo
+  - image
+kubeVersion: '>=1.24.0-0'
+maintainers:
+  - name: TrueCharts
+    email: info@truecharts.org
+    url: https://truecharts.org
+name: piwigo
+sources:
+  - https://ghcr.io/linuxserver/piwigo
+  - https://github.com/linuxserver/docker-piwigo
+  - https://github.com/truecharts/charts/tree/master/charts/stable/piwigo
 type: application
+version: 14.7.1

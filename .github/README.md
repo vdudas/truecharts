@@ -1,6 +1,8 @@
-# TrueCharts
+---
+title: TrueCharts
+---
 
-**Community Chart Catalog for TrueNAS SCALE**
+**Community Helm Chart Catalog**
 
 [![docs](https://img.shields.io/badge/docs-rtfm-yellow?logo=gitbook&logoColor=white&style=for-the-badge)](https://truecharts.org/)
 [![Discord](https://img.shields.io/badge/discord-chat-7289DA.svg?maxAge=60&style=for-the-badge)](https://discord.gg/Js6xv9nGuU)
@@ -8,19 +10,9 @@
 
 ---
 
-TrueCharts is a catalog of highly optimised TrueNAS SCALE Charts. Made for the community, By the community!
+TrueCharts is a catalog of highly optimised Helm Charts. Made for the community, By the community!
 
-Our primary goals are:
-
-- Micro-Service Centered
-
-- Native Kubernetes
-
-- Stability
-
-- Consistency
-
-All our charts are supposed to work together, be easy to setup using the TrueNAS UI and, above all, give the average user more than enough options to tune things to their liking.
+All our charts are supposed to work together and be easy to setup using any helm-compatible deployment tool, above all, give the average user more than enough options to tune things to their liking.
 
 <br />
 
@@ -30,39 +22,11 @@ All our charts are supposed to work together, be easy to setup using the TrueNAS
 
 ---
 
-Installing TrueCharts within TrueNAS SCALE, is possible using the TrueNAS SCALE Catalog list.
-
-Check TrueCharts [Quick-Start Guides](https://truecharts.org/manual/SCALE/guides/getting-started#adding-truecharts) for more information.
-
 ### Support
 
 Please check our [FAQ](https://truecharts.org/manual/FAQ), [manual](https://truecharts.org/manual/intro/) and [Issue tracker](https://github.com/truecharts/charts/issues) There is a significant chance your issue has been reported before!
 
 Still something not working as expected? [Contact us!](https://discord.gg/tVsPTHWTtr) and we'll figure it out together!
-
-### Roadmap
-
-For big changes we do have a roadmap, every spot on the roadmap is synced to a TrueNAS SCALE Release and should be read as "Should be added at or before this release"
-
-<br />
-
-**Restructure of the Project - TrueNAS SCALE "Bluefin" 22.xx ALPHA 1**
-
-_The current project is hitting internal performance issues, for this reason we need to rework the structure and split some parts of the project into separate repositories._
-
-<br />
-
-**Refactor the Common Chart - TrueNAS SCALE "Bluefin" 22.xx ALPHA 2**
-
-_The shared Common (chart) basis, used by all our Charts, needs some significant code cleanup. Primarily all code needs to follow a standardised format and comply to the same standard_
-
-<br />
-
-**Increased test coverage - TrueNAS SCALE "Bluefin" 22.xx BETA 1**
-
-_With most parts of our project somewhat cleaned up, we need to work on increasing the coverage of our test system. Our unit tests should cover all features and we should also take upgrades into account when testing Chart changes_
-
-<br />
 
 ## Development
 
@@ -77,17 +41,8 @@ This ensures freedom and flexibility for everyone involved and makes sure you, t
 
 ### Getting into creating Charts
 
-Creating charts takes some getting used to, as it's based on Helm charts. We highly suggest prior know-how on creation/modifying Helm Charts, before taking on the challenge of creating SCALE Apps.
-
-For more information on creating SCALE Apps and Helm charts, please check out our [development manual](https://truecharts.org/manual/development/chart-structure/)
-
-### Automation and you
-
-We provide a lot of tools to make it easier to develop charts, templates, automated testing, automated fixes, automated docs. Even automated update is included. We also actively try to collaborate with other k8s community projects on tooling, for the betterment of all!
-
-Those tools do, however, take time to develop and are certainly not bug free. If you find mistakes in our tooling, please feel free to repost issues or submit any fixes you feel appropriate!
-
-<br />
+For more information check the website:
+https://truecharts.org
 
 ## Contact and Support
 
@@ -111,20 +66,12 @@ To contact the TrueCharts project:
 
 <br />
 
-## Featured Projects
-
-A lot of our work is based on the great effort of others. We would love to extend special thanks to these projects we owe a lot to:
-
-| <a href="https://www.truenas.com/truenas-scale/"> <img src="https://user-images.githubusercontent.com/7613738/113836934-a1764e00-978d-11eb-8e19-a087c5c1f99b.png" width="150" height="150" /> </a> | <a href="https://k8s-at-home.com/"> <img src="https://user-images.githubusercontent.com/7613738/113837194-e26e6280-978d-11eb-9632-2e1529946302.png" width="150" height="150" /> </a> | <a href="https://traefik.io/traefik/"> <img src="https://user-images.githubusercontent.com/7613738/113837353-0b8ef300-978e-11eb-873e-14769acfe1f1.png" width="150" height="150" /> </a> | <a href="https://www.authelia.com/"> <img src="https://avatars.githubusercontent.com/u/59122411?s=200&v=4" width="150" height="150" /> </a> |
-| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: |
-|                                                                 <a href="https://www.truenas.com/truenas-scale/">TrueNAS SCALE</a>                                                                 |                                                                  <a href="https://k8s-at-home.com/">K8S-At-Home</a>                                                                  |                                                                    <a href="https://traefik.io/traefik/">Traefik</a>                                                                    |                                              <a href="https://www.authelia.com/">Authelia</a>                                               |
-
 <br />
 
 ## Contributors ✨
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-229-orange.svg?style=for-the-badge)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-264-orange.svg?style=for-the-badge)](#contributors)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -337,7 +284,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Dhs92"><img src="https://avatars.githubusercontent.com/u/3068714?v=4?s=100" width="100px;" alt="Alex"/><br /><sub><b>Alex</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=Dhs92" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/bjsemrad"><img src="https://avatars.githubusercontent.com/u/1234356?v=4?s=100" width="100px;" alt="Brian Semrad"/><br /><sub><b>Brian Semrad</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=bjsemrad" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://256.makerslocal.org/wiki/User:Ctag"><img src="https://avatars.githubusercontent.com/u/6200085?v=4?s=100" width="100px;" alt="Christopher"/><br /><sub><b>Christopher</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=ctag" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://256.makerslocal.org/wiki/User:Ctag"><img src="https://avatars.githubusercontent.com/u/6200085?v=4?s=100" width="100px;" alt="Christopher"/><br /><sub><b>Christopher</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=ctag" title="Code">💻</a> <a href="https://github.com/truecharts/charts/commits?author=ctag" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/engedics"><img src="https://avatars.githubusercontent.com/u/11065639?v=4?s=100" width="100px;" alt="Csaba Engedi"/><br /><sub><b>Csaba Engedi</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=engedics" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Cyb3rzombie"><img src="https://avatars.githubusercontent.com/u/19274374?v=4?s=100" width="100px;" alt="Cyb3rzombie"/><br /><sub><b>Cyb3rzombie</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=Cyb3rzombie" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://cloudtutorial.net/"><img src="https://avatars.githubusercontent.com/u/1249095?v=4?s=100" width="100px;" alt="Eric Cavalcanti"/><br /><sub><b>Eric Cavalcanti</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=CajuCLC" title="Code">💻</a></td>
@@ -398,9 +345,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/waflint"><img src="https://avatars.githubusercontent.com/u/94139453?v=4?s=100" width="100px;" alt="waflint"/><br /><sub><b>waflint</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=waflint" title="Code">💻</a></td>
     </tr>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Shrinks99"><img src="https://avatars.githubusercontent.com/u/5672810?v=4?s=100" width="100px;" alt="Henry Wilkinson"/><br /><sub><b>Henry Wilkinson</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=Shrinks99" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Shrinks99"><img src="https://avatars.githubusercontent.com/u/5672810?v=4?s=100" width="100px;" alt="Henry Wilkinson"/><br /><sub><b>Henry Wilkinson</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=Shrinks99" title="Code">💻</a> <a href="https://github.com/truecharts/charts/commits?author=Shrinks99" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/cedstrom"><img src="https://avatars.githubusercontent.com/u/6175957?v=4?s=100" width="100px;" alt="cedstrom"/><br /><sub><b>cedstrom</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=cedstrom" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/v3DJG6GL"><img src="https://avatars.githubusercontent.com/u/72495210?v=4?s=100" width="100px;" alt="v3DJG6GL"/><br /><sub><b>v3DJG6GL</b></sub></a><br /><a href="https://github.com/truecharts/charts/issues?q=author%3Av3DJG6GL" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/v3DJG6GL"><img src="https://avatars.githubusercontent.com/u/72495210?v=4?s=100" width="100px;" alt="v3DJG6GL"/><br /><sub><b>v3DJG6GL</b></sub></a><br /><a href="https://github.com/truecharts/charts/issues?q=author%3Av3DJG6GL" title="Bug reports">🐛</a> <a href="https://github.com/truecharts/charts/commits?author=v3DJG6GL" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/polarstack"><img src="https://avatars.githubusercontent.com/u/42521003?v=4?s=100" width="100px;" alt="polarstack"/><br /><sub><b>polarstack</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=polarstack" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/K1Hyve"><img src="https://avatars.githubusercontent.com/u/53298451?v=4?s=100" width="100px;" alt="Keyvan"/><br /><sub><b>Keyvan</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=K1Hyve" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/MickaelFontes"><img src="https://avatars.githubusercontent.com/u/81414455?v=4?s=100" width="100px;" alt="MickaelFontes"/><br /><sub><b>MickaelFontes</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=MickaelFontes" title="Code">💻</a></td>
@@ -430,6 +377,51 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Plinsboorg"><img src="https://avatars.githubusercontent.com/u/42300339?v=4?s=100" width="100px;" alt="Dennis"/><br /><sub><b>Dennis</b></sub></a><br /><a href="https://github.com/truecharts/charts/issues?q=author%3APlinsboorg" title="Bug reports">🐛</a> <a href="https://github.com/truecharts/charts/commits?author=Plinsboorg" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/TheIceCreamTroll"><img src="https://avatars.githubusercontent.com/u/33820904?v=4?s=100" width="100px;" alt="TheIceCreamTroll"/><br /><sub><b>TheIceCreamTroll</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=TheIceCreamTroll" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/atanaspam"><img src="https://avatars.githubusercontent.com/u/9085090?v=4?s=100" width="100px;" alt="Atanas Pamukchiev"/><br /><sub><b>Atanas Pamukchiev</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=atanaspam" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Boemeltrein"><img src="https://avatars.githubusercontent.com/u/130394941?v=4?s=100" width="100px;" alt="Boemeltrein"/><br /><sub><b>Boemeltrein</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=Boemeltrein" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/oblique"><img src="https://avatars.githubusercontent.com/u/194040?v=4?s=100" width="100px;" alt="Yiannis Marangos"/><br /><sub><b>Yiannis Marangos</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=oblique" title="Code">💻</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/mruoss"><img src="https://avatars.githubusercontent.com/u/695307?v=4?s=100" width="100px;" alt="Michael Ruoss"/><br /><sub><b>Michael Ruoss</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=mruoss" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/aronkahrs-us"><img src="https://avatars.githubusercontent.com/u/85702110?v=4?s=100" width="100px;" alt="Aron Kahrs"/><br /><sub><b>Aron Kahrs</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=aronkahrs-us" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/nemesis1982"><img src="https://avatars.githubusercontent.com/u/139973370?v=4?s=100" width="100px;" alt="nemesis1982"/><br /><sub><b>nemesis1982</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=nemesis1982" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ekrunch"><img src="https://avatars.githubusercontent.com/u/13153293?v=4?s=100" width="100px;" alt="Ed P"/><br /><sub><b>Ed P</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=ekrunch" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/fnadeau"><img src="https://avatars.githubusercontent.com/u/1904563?v=4?s=100" width="100px;" alt="Frédéric Nadeau"/><br /><sub><b>Frédéric Nadeau</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=fnadeau" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/frapbod"><img src="https://avatars.githubusercontent.com/u/48932093?v=4?s=100" width="100px;" alt="frapbod"/><br /><sub><b>frapbod</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=frapbod" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://bahuma.io"><img src="https://avatars.githubusercontent.com/u/5746121?v=4?s=100" width="100px;" alt="Max Bachhuber"/><br /><sub><b>Max Bachhuber</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=bahuma20" title="Code">💻</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/zierbeek"><img src="https://avatars.githubusercontent.com/u/58994651?v=4?s=100" width="100px;" alt="zierbeek"/><br /><sub><b>zierbeek</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=zierbeek" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ac1dburnz"><img src="https://avatars.githubusercontent.com/u/10972668?v=4?s=100" width="100px;" alt="Ac1dburn"/><br /><sub><b>Ac1dburn</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=ac1dburnz" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/antoinesaget"><img src="https://avatars.githubusercontent.com/u/38580521?v=4?s=100" width="100px;" alt="Antoine Saget"/><br /><sub><b>Antoine Saget</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=antoinesaget" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/bbodenmiller"><img src="https://avatars.githubusercontent.com/u/1192780?v=4?s=100" width="100px;" alt="Ben Bodenmiller"/><br /><sub><b>Ben Bodenmiller</b></sub></a><br /><a href="https://github.com/truecharts/charts/issues?q=author%3Abbodenmiller" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/felixfon"><img src="https://avatars.githubusercontent.com/u/66350602?v=4?s=100" width="100px;" alt="felixfon"/><br /><sub><b>felixfon</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=felixfon" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/adtwomey"><img src="https://avatars.githubusercontent.com/u/14849762?v=4?s=100" width="100px;" alt="adtwomey"/><br /><sub><b>adtwomey</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=adtwomey" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/alfi0812"><img src="https://avatars.githubusercontent.com/u/43101280?v=4?s=100" width="100px;" alt="alfi0812"/><br /><sub><b>alfi0812</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=alfi0812" title="Code">💻</a> <a href="https://github.com/truecharts/charts/commits?author=alfi0812" title="Documentation">📖</a> <a href="https://github.com/truecharts/charts/issues?q=author%3Aalfi0812" title="Bug reports">🐛</a> <a href="https://github.com/truecharts/charts/pulls?q=is%3Apr+reviewed-by%3Aalfi0812" title="Reviewed Pull Requests">👀</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="http://blog.yuzhuohui.info"><img src="https://avatars.githubusercontent.com/u/413855?v=4?s=100" width="100px;" alt="Agassi"/><br /><sub><b>Agassi</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=agassiyzh" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/sethidden"><img src="https://avatars.githubusercontent.com/u/5359825?v=4?s=100" width="100px;" alt="Artur"/><br /><sub><b>Artur</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=sethidden" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/mxc42"><img src="https://avatars.githubusercontent.com/u/32530812?v=4?s=100" width="100px;" alt="Morgan Hunter"/><br /><sub><b>Morgan Hunter</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=mxc42" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/tannisroot"><img src="https://avatars.githubusercontent.com/u/10602045?v=4?s=100" width="100px;" alt="Aleksandr Oleinikov"/><br /><sub><b>Aleksandr Oleinikov</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=tannisroot" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/axelrtgs"><img src="https://avatars.githubusercontent.com/u/24723497?v=4?s=100" width="100px;" alt="Jamie"/><br /><sub><b>Jamie</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=axelrtgs" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://dgries.de"><img src="https://avatars.githubusercontent.com/u/105990982?v=4?s=100" width="100px;" alt="David Gries"/><br /><sub><b>David Gries</b></sub></a><br /><a href="https://github.com/truecharts/charts/issues?q=author%3Ajustsomescripts" title="Bug reports">🐛</a> <a href="https://github.com/truecharts/charts/commits?author=justsomescripts" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Phreeman33"><img src="https://avatars.githubusercontent.com/u/12772373?v=4?s=100" width="100px;" alt="Phreeman33"/><br /><sub><b>Phreeman33</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=Phreeman33" title="Code">💻</a> <a href="https://github.com/truecharts/charts/issues?q=author%3APhreeman33" title="Bug reports">🐛</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="http://wolvers.io"><img src="https://avatars.githubusercontent.com/u/13272708?v=4?s=100" width="100px;" alt="Jens Wolvers"/><br /><sub><b>Jens Wolvers</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=JWolvers" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/BartWillems"><img src="https://avatars.githubusercontent.com/u/6066578?v=4?s=100" width="100px;" alt="Bart Willems"/><br /><sub><b>Bart Willems</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=BartWillems" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.caidy.cc/"><img src="https://avatars.githubusercontent.com/u/18113342?v=4?s=100" width="100px;" alt="Caidy"/><br /><sub><b>Caidy</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=chencaidy" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/mrkhachaturov"><img src="https://avatars.githubusercontent.com/u/105451445?v=4?s=100" width="100px;" alt="Mr Khachaturov"/><br /><sub><b>Mr Khachaturov</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=mrkhachaturov" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/LordCrash101"><img src="https://avatars.githubusercontent.com/u/164925025?v=4?s=100" width="100px;" alt="LordCrash101"/><br /><sub><b>LordCrash101</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=LordCrash101" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/elendil95"><img src="https://avatars.githubusercontent.com/u/17616744?v=4?s=100" width="100px;" alt="elendil95"/><br /><sub><b>elendil95</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=elendil95" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/TheDodger"><img src="https://avatars.githubusercontent.com/u/1710352?v=4?s=100" width="100px;" alt="TheDodger"/><br /><sub><b>TheDodger</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=TheDodger" title="Code">💻</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.linkedin.com/in/saadawan2/"><img src="https://avatars.githubusercontent.com/u/10093984?v=4?s=100" width="100px;" alt="Saad Awan"/><br /><sub><b>Saad Awan</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=KnightDoom" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Joker9944"><img src="https://avatars.githubusercontent.com/u/9194199?v=4?s=100" width="100px;" alt="Felix von Arx"/><br /><sub><b>Felix von Arx</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=Joker9944" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/yodatak"><img src="https://avatars.githubusercontent.com/u/704477?v=4?s=100" width="100px;" alt="yodatak"/><br /><sub><b>yodatak</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=yodatak" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/BlacCello"><img src="https://avatars.githubusercontent.com/u/18525266?v=4?s=100" width="100px;" alt="Marcel Henrich"/><br /><sub><b>Marcel Henrich</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=BlacCello" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://blog.luxifer.fr"><img src="https://avatars.githubusercontent.com/u/419078?v=4?s=100" width="100px;" alt="Florent Viel"/><br /><sub><b>Florent Viel</b></sub></a><br /><a href="https://github.com/truecharts/charts/commits?author=luxifer" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
@@ -447,12 +439,12 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 ---
 
-Truecharts, is primarily based on a BSD-3-clause license, this ensures almost everyone can use and modify our charts.
-As a lot of Charts are based on upstream Helm Charts, Licences can vary on a per-Chart basis. This can easily be seen by the presence of a "LICENSE" file in said folder.
+Truecharts, is primarily based on a AGPL-v3 license, this ensures almost everyone can use and modify our charts.
+Licences can vary on a per-Chart basis. This can easily be seen by the presence of a "LICENSE" file in said folder.
 
-An exception to this, has been made for every document inside folders labeled as `docs` or `doc` and their subfolders: those folders are not licensed under BSD-3-clause and are considered "all rights reserved". Said content can be modified and changes submitted per PR, in accordance to the github End User License Agreement.
+An exception to this, has been made for every document inside folders labeled as `docs` or `doc` and their subfolders: those folders are not licensed under AGPL-v3 and are considered "all rights reserved". Said content can be modified and changes submitted per PR, in accordance to the github End User License Agreement.
 
-`SPDX-License-Identifier: BSD-3-Clause`
+`SPDX-License-Identifier: AGPL-3.0`
 
 ---
 

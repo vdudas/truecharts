@@ -1,4 +1,6 @@
-# Setup Guide
+---
+title: Setup Guide
+---
 
 **Jellyfin** Media Server is a free fully open-source solution to watch your media from anywhere
 and our app is a simple way to install it on your TrueNAS SCALE server.
@@ -6,17 +8,17 @@ and our app is a simple way to install it on your TrueNAS SCALE server.
 ## Requirements
 
 - Jellyfin TrueCharts Chart
-- Installation of the TrueCharts Catalog, starting [here](https://truecharts.org/manual/SCALE/guides/getting-started#adding-truecharts)
+- Installation of the TrueCharts Catalog, starting [here](/deprecated/scale/#adding-truecharts)
 
 ## Media Storage
 
 - We recommend having configured your media before installing the chart.
   Most people will have their media inside their TrueNAS box,
-  and for that you can simply follow our [Adding Storage](https://truecharts.org/manual/SCALE/guides/add-storage)
+  and for that you can simply follow our [Adding Storage](/deprecated/scale/guides/add-storage)
   guide to `Add Additional App Storage` to **Jellyfin** for their media folder.
 - However some will prefer `NFS Shares` for this storage,
   as they may need to share these folders with other users on other
-  devices outside of TrueNAS, so we recommend following the [using NFS Shares guide](https://truecharts.org/manual/SCALE/guides/nfs-share/).
+  devices outside of TrueNAS, so we recommend following the [using NFS Shares guide](/deprecated/scale/guides/nfs-share/).
 
 ## Install Jellyfin inside TrueNAS SCALE
 
@@ -24,7 +26,7 @@ and our app is a simple way to install it on your TrueNAS SCALE server.
 - Then choose the `Available Applications` tab,
 - and search for `jellyfin`
 
-![Search Jellyfin](img/SearchJellyfin.png)
+![Search Jellyfin](./img/SearchJellyfin.png)
 
 - Click the Install button, and you’ll be prompted to set up the **Jellyfin** software.
 - Most of the settings can be left at the default values, but ensure you select the correct
@@ -36,7 +38,7 @@ and our app is a simple way to install it on your TrueNAS SCALE server.
 The Jellyfin software itself will have some integrated configuration storage included
 with a “PVC” storage type - make sure not to change this, as it’s the preferred and supported option from TrueCharts.
 
-![Jellyfin PVC](img/JellyfinPVC.png)
+![Jellyfin PVC](./img/JellyfinPVC.png)
 
 ### Jellyfin App Transcode Storage
 
@@ -47,7 +49,7 @@ More advanced users with a large amount of RAM in their TrueNAS machine might co
 changing the transcoding space to use the Memory storage medium. Note that this can potentially
 consume a large amount of memory if you’re streaming high-definition video content, or multiple streams at the same time.
 
-![Jellyfin App Transcode](img/JellyfinTranscodeDir.png)
+![Jellyfin App Transcode](./img/JellyfinTranscodeDir.png)
 
 ### Jellyfin Media Storage
 
@@ -61,7 +63,7 @@ As an example we'll add an existing `NFS Share` as many users will have that for
 - Enter the path to your media folder, making sure to match the capitalization,
 - Fill out and take note of a Mount Path that your **Jellyfin** server will access it through. Mark this as Read Only.
 
-![JellyfinNFSShare](img/JellyfinNFSStorage.png)
+![JellyfinNFSShare](./img/JellyfinNFSStorage.png)
 
 Repeat this process for each additional media folder you may have.
 
@@ -79,12 +81,12 @@ from Deploying to Active - once it does, click the Open button to launch the **J
 Select your language, define a user to be used for administrative purposes in **Jellyfin**
 (as well as your first playback) and then choose the Add Media Library button.
 
-![JellyfinAddMedia](img/JellyfinAddMedia.png)
+![JellyfinAddMedia](./img/JellyfinAddMedia.png)
 
 Choose the media type (or as best as you can match it) and click the (+) sign beside Folders to add a Mount Path that you shared over NFS from above.
 
-![JellyfinAddMovies1](img/JellyfinAddMovies1.png)
-![JellyfinAddMovies2](img/JellyfinAddMovies2.png)
+![JellyfinAddMovies1](./img/JellyfinAddMovies1.png)
+![JellyfinAddMovies2](./img/JellyfinAddMovies2.png)
 
 - If required, add more media libraries - music, TV shows, photos - and then click Next.
 - Set your default metadata language for obtaining media information from the Internet,

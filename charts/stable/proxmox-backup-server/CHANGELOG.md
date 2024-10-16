@@ -1,1 +1,4 @@
-# ChangeLog
+---
+title: Changelog
+pagefind: false
+---

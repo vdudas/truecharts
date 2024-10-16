@@ -1,6 +1,6 @@
 image:
   repository: nocodb/nocodb
-  tag: 0.202.10@sha256:2a5f1363848e0dcf9bbb1463c8bc1278f3fe411ad97d53412822ae510eaf308f
+  tag: 0.257.0@sha256:216d9cab11aa4a4cd4b44d5bd803934bbb219bfef4c483983d3d98acbfabae7f
   pullPolicy: IfNotPresent
 securityContext:
   container:
@@ -65,6 +65,7 @@ cnpg:
     database: nocodb
 redis:
   enabled: true
+  includeCommon: true
   redisUsername: default
 portal:
   open:

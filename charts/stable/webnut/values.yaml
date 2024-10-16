@@ -1,7 +1,7 @@
 image:
   repository: edgd1er/webnut
   pullPolicy: IfNotPresent
-  tag: latest@sha256:665418e7e58c950c58c4bdef0308d7b6a6fb38e037f4d4b812381f27b1686a39
+  tag: latest@sha256:cb2c70ec1d0b584c41f4a73ca92c0920c710699f25c17538d012d20f39645fd1
 service:
   main:
     ports:
@@ -28,3 +28,7 @@ workload:
             UPS_PORT: 3493
             UPS_USER: monuser
             UPS_PASSWORD: secret
+persistence:
+  config:
+    enabled: true
+    mountPath: "/config"

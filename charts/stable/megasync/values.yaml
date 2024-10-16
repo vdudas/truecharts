@@ -1,7 +1,7 @@
 image:
+  repository: ich777/megasync
+  tag: latest@sha256:6b36ca4c9abaaa9f6b4f53f41d5bbd70a95d4b736b233a3088e98b719e43321c
   pullPolicy: IfNotPresent
-  repository: tccr.io/truecharts/megasync
-  tag: vlatest@sha256:04d8c00afb09019389c7142a8cd67a724a6abc388d55c691a56b130f91a928d2
 
 securityContext:
   container:

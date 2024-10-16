@@ -1,40 +1,37 @@
-kubeVersion: ">=1.24.0-0"
+annotations:
+  max_scale_version: 24.04.1
+  min_scale_version: 24.04.0
+  truecharts.org/category: home-automation
+  truecharts.org/max_helm_version: "3.15"
+  truecharts.org/min_helm_version: "3.11"
+  truecharts.org/train: stable
 apiVersion: v2
-name: tasmocompiler
-version: 3.0.7
 appVersion: latest
-description:
-  TasmoCompiler is a simple web GUI which allows you to compile fantastic
-  Tasmota firmware with your own settings
-home: https://truecharts.org/charts/incubator/tasmocompiler
-icon: https://truecharts.org/img/hotlink-ok/chart-icons/tasmocompiler.png
-deprecated: false
-sources:
-  - https://github.com/truecharts/charts/tree/master/charts/incubator/tasmocompiler
-  - https://github.com/truecharts/containers/tree/master/mirrortasmocompiler
-  - https://github.com/benzino77/tasmocompiler
-maintainers:
-  - name: TrueCharts
-    email: info@truecharts.org
-    url: https://truecharts.org
-keywords:
-  - tasmocompiler
-  - HomeAutomation
-  - Tools-Utilities
 dependencies:
   - name: common
-    version: 13.2.2
-    repository: https://library-charts.truecharts.org
+    version: 25.0.0
+    repository: oci://tccr.io/truecharts
     condition: ""
     alias: ""
     tags: []
     import-values: []
-annotations:
-  max_scale_version: 23.10.1
-  min_scale_version: 22.12.4
-  truecharts.org/SCALE-support: "true"
-  truecharts.org/category: HomeAutomation
-  truecharts.org/max_helm_version: "3.13"
-  truecharts.org/min_helm_version: "3.12"
-  truecharts.org/train: incubator
+deprecated: false
+description: TasmoCompiler is a simple web GUI which allows you to compile fantastic Tasmota firmware with your own settings
+home: https://truecharts.org/charts/stable/tasmocompiler
+icon: https://truecharts.org/img/hotlink-ok/chart-icons/tasmocompiler.webp
+keywords:
+  - tasmocompiler
+  - home-automation
+  - Tools-Utilities
+kubeVersion: '>=1.24.0-0'
+maintainers:
+  - name: TrueCharts
+    email: info@truecharts.org
+    url: https://truecharts.org
+name: tasmocompiler
+sources:
+  - https://github.com/benzino77/tasmocompiler
+  - https://github.com/truecharts/charts/tree/master/charts/stable/tasmocompiler
+  - https://hub.docker.com/r/benzino77/tasmocompiler
 type: application
+version: 8.2.0

@@ -1,11 +1,11 @@
-# Installation Notes
+---
+title: Installation Notes
+---
 
 - Set `username` to a username that is hard to guess.
 - Set `password` to a password that is hard to guess.
 
 - Enable ingress, without doing so `http://IP:PORT` will be used as the short url generator which obviously will be an issue.
-
-- Please follow this [guide](https://truecharts.org/manual/SCALE/options/ingress) on adding ingress to a chart.
 
 ## Disable authentication
 

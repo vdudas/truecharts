@@ -1,37 +1,36 @@
-kubeVersion: ">=1.24.0-0"
+annotations:
+  max_scale_version: 24.04.1
+  min_scale_version: 24.04.0
+  truecharts.org/category: games
+  truecharts.org/max_helm_version: "3.15"
+  truecharts.org/min_helm_version: "3.11"
+  truecharts.org/train: stable
 apiVersion: v2
-name: steam-headless
-version: 0.0.8
 appVersion: latest
-description: A Headless Steam chart.
-home: https://truecharts.org/charts/incubator/steam-headless
-icon: https://truecharts.org/img/hotlink-ok/chart-icons/steam-headless.png
-deprecated: false
-sources:
-  - https://github.com/Steam-Headless/docker-steam-headless
-  - https://github.com/truecharts/charts/tree/master/charts/incubator/steam-headless
-  - https://github.com/truecharts/containers/tree/master/mirrorsteam-headless
-maintainers:
-  - name: TrueCharts
-    email: info@truecharts.org
-    url: https://truecharts.org
-keywords:
-  - steam-headless
-  - games
 dependencies:
   - name: common
-    version: 13.2.2
-    repository: https://library-charts.truecharts.org
+    version: 25.0.0
+    repository: oci://tccr.io/truecharts
     condition: ""
     alias: ""
     tags: []
     import-values: []
-annotations:
-  max_scale_version: 23.10.1
-  min_scale_version: 22.12.4
-  truecharts.org/SCALE-support: "true"
-  truecharts.org/category: games
-  truecharts.org/max_helm_version: "3.13"
-  truecharts.org/min_helm_version: "3.12"
-  truecharts.org/train: incubator
+deprecated: false
+description: A Headless Steam chart.
+home: https://truecharts.org/charts/stable/steam-headless
+icon: https://truecharts.org/img/hotlink-ok/chart-icons/steam-headless.webp
+keywords:
+  - steam-headless
+  - games
+kubeVersion: '>=1.24.0-0'
+maintainers:
+  - name: TrueCharts
+    email: info@truecharts.org
+    url: https://truecharts.org
+name: steam-headless
+sources:
+  - https://github.com/Steam-Headless/docker-steam-headless
+  - https://github.com/truecharts/charts/tree/master/charts/stable/steam-headless
+  - https://hub.docker.com/r/josh5/steam-headless
 type: application
+version: 5.2.2

@@ -1,7 +1,7 @@
 image:
-  repository: tccr.io/truecharts/gravity
+  repository: ghcr.io/beryju/gravity
+  tag: v0.9.1@sha256:731abaf64dfaec352442eff11fd80f82657fdb20df9459a97b8b768ca7aa2c12
   pullPolicy: IfNotPresent
-  tag: v0.6.18@sha256:1fc3f7d2507d618859f4ec84c48af0caf82efaf284c0c34df423cbab138b88c8
 
 securityContext:
   container:

@@ -1,7 +1,7 @@
 image:
   repository: ghcr.io/linuxserver/minetest
   pullPolicy: IfNotPresent
-  tag: 5.8.0@sha256:929c1fabcbd4ba42036e84669034330e177f84a2e0a45204e74d4067bff62f5f
+  tag: 5.9.1@sha256:c934ebe493290c7581c96eba36d08b85ee77d8dde8af998432e715f831eaa484
 service:
   main:
     ports:

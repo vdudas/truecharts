@@ -1,39 +1,38 @@
-kubeVersion: ">=1.24.0-0"
+annotations:
+  max_scale_version: 24.04.1
+  min_scale_version: 24.04.0
+  truecharts.org/category: home-automation
+  truecharts.org/max_helm_version: "3.15"
+  truecharts.org/min_helm_version: "3.11"
+  truecharts.org/train: stable
 apiVersion: v2
-name: wizarr
-version: 3.0.15
-appVersion: 3.5.1
-description: A automatic user invitation system for Plex.
-home: https://truecharts.org/charts/stable/wizarr
-icon: https://truecharts.org/img/hotlink-ok/chart-icons/wizarr.png
-deprecated: false
-sources:
-  - https://github.com/Wizarrrr/wizarr
-  - https://github.com/truecharts/charts/tree/master/charts/stable/wizarr
-  - https://ghcr.io/wizarrrr/wizarr
-maintainers:
-  - name: TrueCharts
-    email: info@truecharts.org
-    url: https://truecharts.org
-keywords:
-  - wizarr
-  - HomeAutomation
-  - Tools-Utilities
-  - Other
+appVersion: 4.1.1
 dependencies:
   - name: common
-    version: 14.3.5
-    repository: https://library-charts.truecharts.org
+    version: 25.0.0
+    repository: oci://tccr.io/truecharts
     condition: ""
     alias: ""
     tags: []
     import-values: []
-annotations:
-  max_scale_version: 23.10.1
-  min_scale_version: 22.12.4
-  truecharts.org/SCALE-support: "true"
-  truecharts.org/category: HomeAutomation
-  truecharts.org/max_helm_version: "3.13"
-  truecharts.org/min_helm_version: "3.12"
-  truecharts.org/train: stable
+deprecated: false
+description: A automatic user invitation system for Plex.
+home: https://truecharts.org/charts/stable/wizarr
+icon: https://truecharts.org/img/hotlink-ok/chart-icons/wizarr.webp
+keywords:
+  - wizarr
+  - home-automation
+  - Tools-Utilities
+  - Other
+kubeVersion: '>=1.24.0-0'
+maintainers:
+  - name: TrueCharts
+    email: info@truecharts.org
+    url: https://truecharts.org
+name: wizarr
+sources:
+  - https://ghcr.io/wizarrrr/wizarr
+  - https://github.com/Wizarrrr/wizarr
+  - https://github.com/truecharts/charts/tree/master/charts/stable/wizarr
 type: application
+version: 9.2.0

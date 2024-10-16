@@ -1,7 +1,7 @@
 image:
   repository: traggo/server
   pullPolicy: IfNotPresent
-  tag: 0.3.0@sha256:edd1e34852975d1179d24e279b280e9a84bcd1dd7da22b499a083d1af69fb999
+  tag: 0.5.0@sha256:db747dd56af7fb8cd8f4bedeebfe804f69d29f12fd583d13e18d9ebaf944a063
 traggo:
   username: admin
   password: admin

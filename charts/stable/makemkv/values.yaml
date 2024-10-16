@@ -1,6 +1,6 @@
 image:
   repository: jlesage/makemkv
-  tag: v23.11.2@sha256:777c9cba43c8288e9e3d4ea7347ad427938b18bcf84b3b7b1bc69e7d9bbb5762
+  tag: v24.07.1@sha256:87fce9d497cc71878fc02dbca4369144f8e9639c99d0a9431f779d5b3bc9be0d
   pullPolicy: IfNotPresent
 makemkv:
   # General Settings

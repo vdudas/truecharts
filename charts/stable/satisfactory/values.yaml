@@ -1,7 +1,7 @@
 image:
   repository: wolveix/satisfactory-server
   pullPolicy: IfNotPresent
-  tag: v1.5.6@sha256:77bbd2eed50fbf49114dcce090a71a07933a7496787f07bfc947fb6fc5367efa
+  tag: v1.8.8@sha256:11e475fab1f0bd21f83bc28ca45b410a1ca31184cd23220ec856542d06c815cf
 persistence:
   config:
     enabled: true
@@ -12,26 +12,15 @@ persistence:
     mountPath: "/tmp/dumps"
 service:
   main:
+    enabled: true
     ports:
       main:
-        targetPort: 7777
+        enabled: true
         port: 7777
-        protocol: udp
-  beacon:
-    enabled: true
-    ports:
-      beacon:
+        protocol: tcp
+      mainudp:
         enabled: true
-        port: 15000
-        targetPort: 15000
-        protocol: udp
-  query:
-    enabled: true
-    ports:
-      query:
-        enabled: true
-        port: 15777
-        targetPort: 15777
+        port: "{{ .Values.service.main.ports.main.port }}"
         protocol: udp
 portal:
   open:
@@ -47,25 +36,19 @@ workload:
     podSpec:
       containers:
         main:
-          probes:
-            liveness:
-              enabled: false
-            readiness:
-              enabled: false
-            startup:
-              enabled: false
           env:
-            AUTOPAUSE: true
-            AUTOSAVEINTERVAL: 300
-            AUTOSAVENUM: 3
-            AUTOSAVEONDISCONNECT: true
-            CRASHREPORT: true
+            AUTOSAVENUM: 5
             DEBUG: false
             DISABLESEASONALEVENTS: false
+            LOG: false
+            MAXOBJECTS: 2162688
             MAXPLAYERS: 4
-            SERVERBEACONPORT: "{{ .Values.service.beacon.ports.beacon.targetPort }}"
-            SERVERGAMEPORT: "{{ .Values.service.main.ports.main.targetPort }}"
+            MAXTICKRATE: 30
+            ROOTLESS: false
+            SERVERGAMEPORT: "{{ .Values.service.main.ports.main.port }}"
             SERVERIP: "0.0.0.0"
-            SERVERQUERYPORT: "{{ .Values.service.query.ports.query.targetPort }}"
+            SERVERSTREAMING: true
             SKIPUPDATE: false
             STEAMBETA: false
+            TIMEOUT: 30
+            VMOVERRIDE: false

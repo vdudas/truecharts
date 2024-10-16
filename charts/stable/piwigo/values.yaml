@@ -1,7 +1,7 @@
 image:
   repository: ghcr.io/linuxserver/piwigo
   pullPolicy: IfNotPresent
-  tag: 14.0.0@sha256:0eb2a0a8ff3a30bc65a83eb3f1685adb3541be6bcc5b37a3145928bb03dab22c
+  tag: 14.5.0@sha256:458d08e9143c9b7796a426925ace2df33d4b9d2e12cc97e8156ce76c1100f6f5
 securityContext:
   container:
     runAsNonRoot: false
@@ -52,6 +52,7 @@ persistence:
     enabled: true
 mariadb:
   enabled: true
+  includeCommon: true
   mariadbUsername: piwigo
   mariadbDatabase: piwigo
 portal:

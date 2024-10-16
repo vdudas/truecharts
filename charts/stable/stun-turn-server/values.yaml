@@ -1,7 +1,7 @@
 image:
+  repository: ich777/stun-turn-server
+  tag: latest@sha256:0ef286c99c908dbc526720774229ec6eab367669226bcecb7a1cc7e5ca64afad
   pullPolicy: IfNotPresent
-  repository: tccr.io/truecharts/stun-turn-server
-  tag: latest@sha256:459d8f624ae06708f245e51a25afd904a3b83242630913976356ee754925391f
 
 service:
   main:

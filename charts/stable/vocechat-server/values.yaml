@@ -1,7 +1,7 @@
 image:
   repository: privoce/vocechat-server
   pullPolicy: IfNotPresent
-  tag: v0.3.43@sha256:297dd69f16586bab4dadafd54e3c99498eaa55c2eb600faa831512213058e2f6
+  tag: v0.3.57@sha256:45daa3e9cb2716bd86463fac3b5224449169e892423258eb1dac0f8328d71388
 
 service:
   main:

@@ -1,0 +1,58 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: ich777/steamcmd
+  tag: cstrike1.6@sha256:270a05ee0efa59be2cef0aad108dc41c0c25001f40de3b490ed58956f4eaa600
+persistence:
+  serverfiles:
+    enabled: true
+    mountPath: /serverdata/serverfiles
+  steamcmd:
+    enabled: true
+    mountPath: /serverdata/steamcmd
+portal:
+  open:
+    enabled: true
+securityContext:
+  container:
+    readOnlyRootFilesystem: false
+    runAsGroup: 0
+    runAsUser: 0
+service:
+  main:
+    ports:
+      main:
+        port: 27015
+        protocol: udp
+        targetPort: 27015
+  tcprcon:
+    enabled: true
+    ports:
+      tcprcon:
+        enabled: true
+        port: 27015
+        protocol: tcp
+        targetPort: 27015
+workload:
+  main:
+    podSpec:
+      containers:
+        main:
+          env:
+            GAME_ID: "90"
+            GAME_MOD: ""
+            GAME_NAME: cstrike
+            GAME_PARAMS: +maxplayers 32 +map de_dust
+            GAME_PORT: "27015"
+            PASSWRD: ""
+            USERNAME: ""
+            VALIDATE: "false"
+          probes:
+            liveness:
+              port: "{{ .Values.service.tcprcon.ports.tcprcon.targetPort }}"
+              type: tcp
+            readiness:
+              port: "{{ .Values.service.tcprcon.ports.tcprcon.targetPort }}"
+              type: tcp
+            startup:
+              port: "{{ .Values.service.tcprcon.ports.tcprcon.targetPort }}"
+              type: tcp

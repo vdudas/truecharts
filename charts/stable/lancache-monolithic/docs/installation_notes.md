@@ -1,4 +1,6 @@
-# Installation Notes
+---
+title: Installation Notes
+---
 
 Clients like Steam, Battle.net, etc sends requests to port 80/443.
 In case you don't want to use traefik in front of this app, you need to change the ports.
@@ -16,13 +18,13 @@ Like TrueNAS Scale WebUI.
 
 ## Lancache-dns
 
-- It's highly recommended to also install the [lancache-dns](https://truecharts.org/charts/stable/lancache-dns/) chart along side the monolithic chart.
+- It's highly recommended to also install the [lancache-dns](/charts/stable/lancache-dns/) chart along side the monolithic chart.
 
 ## Lancache-Prefill
 
 How to use lancache-prefill sidecar
 
-:::info
+:::tip
 
 Shell into the main pod, not the _prefill_ pod.
 

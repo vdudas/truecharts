@@ -1,6 +1,6 @@
 image:
   repository: eclipse-mosquitto
-  tag: 2.0.18@sha256:fa9822d3e9bdb12c80f6cb7ddd22922b26c1cd4ffa071815242ac156f9559d7d
+  tag: 2.0.19@sha256:069ab2a92ce87b318b91586845af1a53d762b7cffae60737e76e1a8f8dd19e11
   pullPolicy: IfNotPresent
 service:
   main:
@@ -35,7 +35,9 @@ workload:
               port: 1883
 ingress:
   websockets:
-    autoLink: true
+    enabled: false
+    targetSelector:
+      websockets: websockets
 auth:
   # -- By enabling this, `allow_anonymous` gets set to `false` in the mosquitto config.
   enabled: false

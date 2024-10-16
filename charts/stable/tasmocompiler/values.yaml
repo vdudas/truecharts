@@ -1,7 +1,7 @@
 image:
+  repository: benzino77/tasmocompiler
+  tag: latest@sha256:61d513b9989b1ed2ec74a9cc160e2598468baa7e3ca6aea0dd48d77c538a9314
   pullPolicy: IfNotPresent
-  repository: tccr.io/truecharts/tasmocompiler
-  tag: latest@sha256:506e9f54b21eaeca6eb7a5cfdef32640592ad2b05289a2c8b7a32338d8d9ee38
 
 securityContext:
   container:

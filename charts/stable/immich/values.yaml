@@ -1,15 +1,22 @@
 image:
-  repository: altran1502/immich-server
-  tag: v1.88.2@sha256:d91f7b58ccc9fe57a62e037e98882fe88abd36c8e8a1949f7af0db13049d0e92
+  repository: ghcr.io/immich-app/immich-server
+  tag: v1.118.1@sha256:c53300f717f9f82e645c198818a1f7155410eb4041961d09b79585ea3b4934dc
   pullPolicy: IfNotPresent
+
 mlImage:
-  repository: altran1502/immich-machine-learning
-  tag: v1.88.2@sha256:d63de8141e64d77423a23c28ffc9c622420c7fd506fa0dc061f6ff6fac7b2f8e
+  repository: ghcr.io/immich-app/immich-machine-learning
   pullPolicy: IfNotPresent
-typesenseImage:
-  repository: typesense/typesense
-  tag: 0.25.1@sha256:3724f68156097114d07790e1c8bfaaca13b12eaecd602776d30d9933029064c7
+  tag: v1.118.1@sha256:70698889bf63a60070e781629f370921fb0f2a8fe274c868e86de32f18491346
+
+mlCudaImage:
+  repository: ghcr.io/immich-app/immich-machine-learning
   pullPolicy: IfNotPresent
+  tag: v1.118.1-cuda@sha256:6d2df6289b3ede2262ab17b9a7891202c71386cb4b0525bf72659b4a4b1b9171
+
+mlOpenvinoImage:
+  repository: ghcr.io/immich-app/immich-machine-learning
+  pullPolicy: IfNotPresent
+  tag: v1.118.1-openvino@sha256:7633fad2d0c92b002ec5f2228779da2464f607f6b40383a960503662f0722730
 
 securityContext:
   container:
@@ -20,8 +27,7 @@ securityContext:
 
 immich:
   enable_ml: true
-  enable_typesense: true
-  public_login_page_message: Immich
+  mlImageType: mlImage
   log_level: log
 
 service:
@@ -55,17 +61,6 @@ service:
         port: 10003
         protocol: http
         targetSelector: machinelearning
-  typesense:
-    enabled: true
-    type: ClusterIP
-    targetSelector: typesense
-    ports:
-      typesense:
-        enabled: true
-        primary: true
-        port: 10002
-        protocol: http
-        targetSelector: typesense
 
 persistence:
   mlcache:
@@ -82,13 +77,6 @@ persistence:
       microservices:
         microservices:
           mountPath: /microcache
-  typesense:
-    enabled: true
-    type: emptyDir
-    targetSelector:
-      typesense:
-        typesense:
-          mountPath: /typesensedata
   library:
     enabled: true
     mountPath: /usr/src/app/upload/library
@@ -140,13 +128,30 @@ cnpg:
     enabled: true
     user: immich
     database: immich
+    type: vectors
+    cluster:
+      initdb:
+        postInitApplicationSQL:
+          - CREATE EXTENSION IF NOT EXISTS cube;
+          - CREATE EXTENSION IF NOT EXISTS earthdistance;
+          - CREATE SCHEMA IF NOT EXISTS vectors;
+          - ALTER DATABASE immich SET search_path TO "immich", public, vectors;
+          - SET search_path TO "immich", public, vectors;
+          - GRANT SELECT ON TABLE pg_vector_index_stat TO PUBLIC;
+          - ALTER SCHEMA vectors OWNER TO immich;
 
 redis:
   enabled: true
+  includeCommon: true
   redisUsername: default
 
 portal:
   open:
     enabled: true
 
-updated: true
+ingress:
+  main:
+    integrations:
+      homepage:
+        widget:
+          version: 2

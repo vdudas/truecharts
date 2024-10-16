@@ -1,6 +1,6 @@
 image:
   repository: photoprism/photoprism
-  tag: 231128@sha256:cbaf35b067efc179dee68ab703db8911c2ad306830831458abb369542ee4cf12
+  tag: 240915@sha256:1f14335e2cd9dfaadc555ac8d40aa8a3966a5b5e5ef88fa78973ef7e8673fa2b
   pullPolicy: IfNotPresent
 service:
   main:

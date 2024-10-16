@@ -1,7 +1,7 @@
 image:
+  repository: ich777/steamcmd
+  tag: unturned@sha256:180f269a16fc70c44c3646d240f3b52907d86ff182462f65d86189410d58b70a
   pullPolicy: IfNotPresent
-  repository: tccr.io/truecharts/unturned
-  tag: latest@sha256:177219ed57cb12c4c9c88b34f5e25791b4f0b448f330b386639d4f3310eb9714
 
 securityContext:
   container:

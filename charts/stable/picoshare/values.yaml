@@ -1,6 +1,6 @@
 image:
   repository: mtlynch/picoshare
-  tag: 1.4.1@sha256:0373b57465518a26429891831f993752a7b51bb18d581b6b06527ea478fb6ab5
+  tag: 1.4.4@sha256:36eda700181a517bc8d32f630416ed751fd78c2805a270ff23e85190ecef817c
   pullPolicy: IfNotPresent
 service:
   main:

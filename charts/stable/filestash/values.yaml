@@ -1,7 +1,7 @@
 image:
+  repository: machines/filestash
+  tag: latest@sha256:6046997d96c37664ab0624f3729193011df6bbb17a19425c4ebfdba5dde2da6c
   pullPolicy: IfNotPresent
-  repository: tccr.io/truecharts/filestash
-  tag: latest@sha256:cd613d2f128b7aeba051aed421176c44bf5b3b6df0f72102ad6a4b76f569802d
 
 securityContext:
   container:

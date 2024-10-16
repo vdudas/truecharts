@@ -1,7 +1,7 @@
 image:
   repository: bitnami/wordpress
   pullPolicy: IfNotPresent
-  tag: 6.4.2@sha256:171f807fd9138a1395ee9335db4a82bd53e805997351c177768b923c20eb08a0
+  tag: 6.6.2@sha256:59820e6e0fff927059cdfcfd21ae1f9296d59ab6cf32bdbe8ca7076f3a102a9a
 securityContext:
   container:
     readOnlyRootFilesystem: false
@@ -16,6 +16,19 @@ workload:
                 name: env-config
             - secretRef:
                 name: env-secret
+          probes:
+            liveness:
+              enabled: true
+              type: tcp
+              port: "{{ .Values.service.main.ports.main.port }}"
+            readiness:
+              enabled: true
+              type: tcp
+              port: "{{ .Values.service.main.ports.main.port }}"
+            startup:
+              enabled: true
+              type: tcp
+              port: "{{ .Values.service.main.ports.main.port }}"
 wordpress:
   user: user
   pass: bitnami
@@ -51,6 +64,7 @@ persistence:
     mountPath: /bitnami/wordpress
 mariadb:
   enabled: true
+  includeCommon: true
   mariadbUsername: wordpress
   mariadbDatabase: wordpress
 portal:

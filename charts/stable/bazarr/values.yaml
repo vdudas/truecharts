@@ -1,7 +1,11 @@
 image:
   repository: ghcr.io/onedr0p/bazarr
   pullPolicy: IfNotPresent
-  tag: 1.4.0@sha256:c81c4d9cbec093d5a999cfa3cd1af01d3f00d6292d6f5c33608510cef0ed83c7
+  tag: 1.4.5@sha256:c0bf91443c32f3978777b4ddd2732908f51b157bbe00cd3259b23f7716bb4af7
+exportarrImage:
+  repository: ghcr.io/onedr0p/exportarr
+  tag: v2.0.1@sha256:727e7bc8f2f0934a2117978c59f4476b954018b849a010ea6cfb380bd6539644
+  pullPolicy: IfNotPresent
 service:
   main:
     ports:
@@ -9,10 +13,67 @@ service:
         port: 6767
         protocol: http
         targetPort: 6767
+  metrics:
+    enabled: "{{ .Values.metrics.main.enabled }}"
+    type: ClusterIP
+    ports:
+      metrics:
+        enabled: true
+        port: 7879
+
+workload:
+  main:
+    podSpec:
+      containers:
+        exportarr:
+          enabled: "{{ .Values.metrics.main.enabled }}"
+          imageSelector: exportarrImage
+          args:
+            - bazarr
+          probes:
+            liveness:
+              enabled: true
+              type: http
+              path: /healthz
+              port: "{{ .Values.service.metrics.ports.metrics.port }}"
+            readiness:
+              enabled: true
+              type: http
+              path: /healthz
+              port: "{{ .Values.service.metrics.ports.metrics.port }}"
+            startup:
+              enabled: true
+              type: http
+              path: /healthz
+              port: "{{ .Values.service.metrics.ports.metrics.port }}"
+          env:
+            INTERFACE: 0.0.0.0
+            PORT: "{{ .Values.service.metrics.ports.metrics.port }}"
+            URL: '{{ printf "http://%v:%v" (include "tc.v1.common.lib.chart.names.fullname" $) .Values.service.main.ports.main.port }}'
+            APIKEY: "{{ .Values.metrics.main.apiKey }}"
+
 persistence:
   config:
     enabled: true
-    mountPath: /config
+    targetSelector:
+      main:
+        main:
+          mountPath: /config
+        exportarr:
+          mountPath: /config
+          readOnly: true
+
+metrics:
+  main:
+    enabled: false
+    type: "servicemonitor"
+    endpoints:
+      - port: metrics
+        path: /metrics
+    targetSelector: metrics
+    # Required for exportarr
+    apiKey: ""
+
 portal:
   open:
     enabled: true

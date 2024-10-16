@@ -1,6 +1,6 @@
 {{- define "immich.microservices" -}}
 {{- $fname := (include "tc.v1.common.lib.chart.names.fullname" .) -}}
-{{- $serverUrl := printf "http://%v:%v/api/server-info/ping" $fname .Values.service.main.ports.main.port }}
+{{- $serverUrl := printf "http://%v:%v/api/server/ping" $fname .Values.service.main.ports.main.port }}
 enabled: true
 type: Deployment
 podSpec:
@@ -13,16 +13,10 @@ podSpec:
       enabled: true
       primary: true
       imageSelector: image
-      command: /bin/sh
-      args:
-        - -c
-        - /usr/src/app/start-microservices.sh
       securityContext:
         capabilities:
           disableS6Caps: true
       envFrom:
-        - secretRef:
-            name: secret
         - secretRef:
             name: deps-secret
         - configMapRef:
@@ -32,14 +26,14 @@ podSpec:
       probes:
         readiness:
           enabled: true
-          type: tcp
-          port: {{ .Values.service.microservices.ports.microservices.port }}
+          type: exec
+          command: /usr/src/app/bin/immich-healthcheck
         liveness:
           enabled: true
-          type: tcp
-          port: {{ .Values.service.microservices.ports.microservices.port }}
+          type: exec
+          command: /usr/src/app/bin/immich-healthcheck
         startup:
           enabled: true
-          type: tcp
-          port: {{ .Values.service.microservices.ports.microservices.port }}
+          type: exec
+          command: /usr/src/app/bin/immich-healthcheck
 {{- end -}}

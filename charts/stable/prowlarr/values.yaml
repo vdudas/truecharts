@@ -1,11 +1,11 @@
 image:
   repository: ghcr.io/onedr0p/prowlarr-develop
-  tag: 1.11.1.4146@sha256:c7ad70aaf1dae541ec0fdae0a449cbfcab1e2dd31c46e92f758b4006bfef4a53
+  tag: 1.25.2.4794@sha256:4ff88b9911a9d8232bc1a0065b9423ea631c591c5fe0959effb3b1c093ef4930
   pullPolicy: IfNotPresent
 exportarrImage:
   repository: ghcr.io/onedr0p/exportarr
   pullPolicy: IfNotPresent
-  tag: v1.6.0@sha256:b522e128509b766cf66f847190fccd225ff194dc76775fe6a215f2dd3010cac2
+  tag: v2.0.1@sha256:727e7bc8f2f0934a2117978c59f4476b954018b849a010ea6cfb380bd6539644
 securityContext:
   container:
     readOnlyRootFilesystem: false
@@ -15,32 +15,29 @@ service:
       main:
         port: 9696
   metrics:
-    enabled: true
+    enabled: "{{ .Values.metrics.main.enabled }}"
     type: ClusterIP
-    targetSelector: exportarr
     ports:
       metrics:
         enabled: true
         port: 9697
-        targetSelector: exportarr
 workload:
   main:
     podSpec:
       containers:
         main:
+          probes:
+            liveness:
+              path: /ping
+            readiness:
+              path: /ping
+            startup:
+              type: tcp
           env:
             PROWLARR__PORT: "{{ .Values.service.main.ports.main.port }}"
             PROWLARR__AUTHENTICATION_METHOD: ""
-  exportarr:
-    enabled: true
-    type: Deployment
-    strategy: RollingUpdate
-    replicas: 1
-    podSpec:
-      containers:
         exportarr:
-          primary: true
-          enabled: true
+          enabled: "{{ .Values.metrics.main.enabled }}"
           imageSelector: exportarrImage
           args:
             - prowlarr
@@ -80,10 +77,17 @@ persistence:
       main:
         main:
           mountPath: /config
-      exportarr:
         exportarr:
           mountPath: /config
           readOnly: true
+configmap:
+  dashboard:
+    enabled: true
+    labels:
+      grafana_dashboard: "1"
+    data:
+      prowlarr.json: >-
+        {{ .Files.Get "dashboard.json" | indent 8 }}
 metrics:
   main:
     enabled: true

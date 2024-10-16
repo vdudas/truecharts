@@ -22,13 +22,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout [master]
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+        uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4
         with:
           fetch-depth: 1
           ref: master
 
       - name: Checkout [commit]
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+        uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4
         with:
           fetch-depth: 1
           ref: ${{ inputs.checkoutCommit }}
@@ -48,15 +48,12 @@ jobs:
           pip3 install --no-cache-dir pre-commit yamale yamllint
 
       - name: Install Helm
-        uses: azure/setup-helm@5119fcb9089d432beecbf79bb2c7915207344b78 # v3
+        uses: azure/setup-helm@fe7b79cd5ee1e45176fcad797de68ecaf3ca4814 # v4
         with:
-          version: v3.13.2
+          version: v3.14.2
 
       - name: Prep Helm
         run: |
-          helm repo add truecharts https://charts.truecharts.org
-          helm repo add truecharts-deps https://deps.truecharts.org
-          helm repo add truecharts-library https://library-charts.truecharts.org
           helm repo add jetstack https://charts.jetstack.io
           helm repo add vmwaretanzu https://vmware-tanzu.github.io/helm-charts
           helm repo add cnpg https://cloudnative-pg.github.io/charts
@@ -102,9 +99,7 @@ jobs:
           charts_path: "./"
         run: |
           CHANGED=$(echo '${{ steps.list-changed.outputs.CHANGED_CHARTS }}' | jq --raw-output '.[]')
-          for changed in ${CHANGED}; do
-            .github/scripts/fetch_helm_deps.sh "${changed}"
-          done
+          ./charttool deps ${CHANGED}
 
       - name: Run Chart Linting
         continue-on-error: true
@@ -120,7 +115,7 @@ jobs:
       - name: Create/Update comment
         if: steps.list-changed.outputs.detected == 'true'
         continue-on-error: true
-        uses: thollander/actions-comment-pull-request@1d3973dc4b8e1399c0620d3f2b1aa5e795465308 # v2
+        uses: thollander/actions-comment-pull-request@e2c37e53a7d2227b61585343765f73a9ca57eda9 # v3
         with:
           filePath: /tmp/lint_result.txt
           comment_tag: lint_results

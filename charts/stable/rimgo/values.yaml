@@ -1,7 +1,8 @@
 image:
+  repository: quay.io/pussthecatorg/rimgo
+  tag: latest@sha256:786ff7f12439dcd4bf179e984e8ffb559507974ad5aa0a88f9fc809fb15b5e7d
+
   pullPolicy: IfNotPresent
-  repository: tccr.io/truecharts/rimgo
-  tag: latest@sha256:fce81544a27a9e727bfb807cb2b4d8b9e578715c69fbbde4de93627dc19fe470
 persistence: {}
 
 env:

@@ -1,6 +1,8 @@
-# How To
+---
+title: How To
+---
 
-:::warning
+:::caution
 
 This chart requires **aria2** to be installed or otherwise reachable.
 

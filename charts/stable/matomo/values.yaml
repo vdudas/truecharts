@@ -1,6 +1,6 @@
 image:
   repository: bitnami/matomo
-  tag: 4.16.0@sha256:82807b0d0aabf37cb5236709d72eb60cf96538ea6207a2a6ff0096263e462f4f
+  tag: 5.1.2@sha256:f635d88c2b77094f5a12de7ab58d303564238c5614e803708db3af48887e06c9
   pullPolicy: IfNotPresent
 securityContext:
   container:
@@ -63,11 +63,7 @@ workload:
                 expandObjectName: false
                 name: '{{ printf "%s-%s" .Release.Name "mariadbcreds" }}'
                 key: plainhost
-            MATOMO_DATABASE_PASSWORD:
-              secretKeyRef:
-                expandObjectName: false
-                name: '{{ printf "%s-%s" .Release.Name "mariadbcreds" }}'
-                key: mariadb-password
+            MATOMO_DATABASE_PASSWORD: "{{ .Values.mariadb.password }}"
 service:
   main:
     ports:
@@ -89,6 +85,7 @@ persistence:
     mountPath: "/bitnami/matomo"
 mariadb:
   enabled: true
+  includeCommon: true
   mariadbUsername: matomo
   mariadbDatabase: matomo
 portal:

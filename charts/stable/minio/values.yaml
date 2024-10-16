@@ -1,6 +1,6 @@
 image:
   repository: minio/minio
-  tag: RELEASE.2023-12-09T18-17-51Z@sha256:a9cec9ed5bda5b4e1b2153823e01b309965b9de7ed6eb7f098d45592eecdfc78
+  tag: RELEASE.2024-10-02T17-50-41Z@sha256:ea15e53e66f96f63e12f45509d2d2d8fad774808debb490f48508b3130bd22d3
   pullPolicy: IfNotPresent
 service:
   main:
@@ -17,7 +17,9 @@ service:
         port: 10106
 ingress:
   api:
-    autoLink: true
+    enabled: false
+    targetSelector:
+      api: api
 persistence:
   config:
     enabled: true
